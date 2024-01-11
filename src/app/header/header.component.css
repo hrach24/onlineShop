@@ -1,0 +1,160 @@
+.header {
+  width: 100%;
+  height: 60px;
+  border-bottom: 2px solid #e5e7eb;
+  display: grid;
+  grid-template-columns: 170px auto auto;
+  grid-template-rows: 100%;
+}
+
+.log-sign-btn {
+  width: auto;
+  margin-right: 7px;
+  grid-column-start: 4;
+  margin-left: auto;
+  margin-inline-start: auto;
+}
+
+.log-in {
+  margin-right: 10px;
+}
+
+.shop-name {
+  text-decoration: none;
+  padding: 16px;
+  font-size: 21px;
+  color: darkgray;
+}
+
+.line {
+  display: none;
+  height: 1px;
+  border: 1px solid #3B82F6;
+  width: 130px;
+  margin-top: 17px;
+}
+
+.shop-name:hover .line {
+  display: block;
+}
+
+.btn:hover .line {
+  display: block;
+}
+
+:host ::ng-deep .p-dialog-title {
+  margin-left: 24px;
+}
+
+:host ::ng-deep .gap-2 img{
+  width: 20px;
+  height: 20px
+}
+
+:host ::ng-deep .p-dropdown{
+  width: 104px;
+  height: 46px;
+  margin-top: 6px;
+}
+
+.country-code{
+  position: relative;
+  left: -7px;
+}
+
+.flag-en{
+  position: relative;
+  top: -6px;
+}
+
+.search-container{
+  grid-column-start: 2;
+  grid-column-end: 4;
+  padding: 6px
+}
+
+.p-input-icon-left{
+  width: 100%
+}
+
+.p-inputtext{
+  width: 100%
+}
+
+.loggedInContent {
+  width: auto;
+  grid-column-start: 4;
+  display: flex;
+  margin-inline-start: auto;
+}
+
+.user {
+  width: 43px;
+  height: 43px;
+  margin-top: 13px;
+  margin-right: 17px;
+}
+
+.user-img {
+  border-radius: 50%
+}
+
+.heart {
+  width: 40px;
+  height: 40px;
+}
+
+.user-cart {
+  width: 40px;
+  height: 40px;
+}
+
+.user-img img {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+}
+
+:host ::ng-deep .pi-heart-fill {
+  font-size: 33px;
+  color: #f97316;
+}
+
+:host ::ng-deep .pi-shopping-cart {
+  color: #22c55e;
+  font-size: 33px;
+}
+
+.user-img {
+  margin-top: 7px;
+  border: 2px solid pink;
+}
+
+.content{
+  display: flex;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 815px) {
+  ::ng-deep .p-dropdown{
+    width: 70px
+  }
+
+  .header{
+    grid-template-columns: auto;
+    grid-template-rows: 100% 100%;
+  }
+
+  .search-container{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+
+}
+
+@media only screen and (max-width: 510px) {
+  .log-in {
+    margin-right: 4px;
+  }
+}

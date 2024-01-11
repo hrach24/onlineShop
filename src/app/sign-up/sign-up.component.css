@@ -1,0 +1,120 @@
+.confirmation-button {
+  margin-top: 19px;
+  padding-bottom: 13px;
+}
+
+.question {
+  margin-top: 16px;
+  margin-left: 15px;
+  text-decoration: underline;
+  color: #3B82F6;
+}
+
+.question:hover{
+  cursor: pointer;
+}
+
+.col input {
+  width: 100%
+}
+
+.txt-holder {
+  margin-bottom: 10px;
+}
+
+.reg-input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+:host ::ng-deep .p-input-icon-right {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+:host ::ng-deep .p-password-input {
+  width: 100%
+}
+
+:host ::ng-deep .p-inputmask {
+  width: 100%
+}
+
+input {
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+}
+
+input {
+  &.ng-valid.ng-touched {
+    border: 1px solid #4CAF50;
+  }
+}
+
+:host ::ng-deep .p-inline-message .p-inline-message-text {
+  font-size: 13px;
+  font-weight: bold
+}
+
+:host ::ng-deep .p-inline-message-error {
+  width: 100%
+}
+
+.error {
+  margin-bottom: 3px;
+}
+
+.phone-number-error {
+  margin-top: 6px;
+}
+
+.form-pi {
+  padding: 3px;
+}
+
+:host ::ng-deep .reg-input.ng-invalid.ng-touched .p-inputtext.p-inputmask {
+  border: 1px solid red
+}
+
+:host ::ng-deep .p-element.ng-invalid.ng-touched .p-inputtext {
+  border: 1px solid red
+}
+
+:host ::ng-deep .p-button{
+  margin-left: 10px;
+}
+
+:host ::ng-deep .reg-input.ng-valid.ng-touched .p-inputtext.p-inputmask {
+  border: 1px solid #4CAF50;
+}
+
+:host ::ng-deep .p-element.ng-valid.ng-touched .p-inputtext {
+  border: 1px solid #4CAF50;
+}
+
+:host ::ng-deep .p-button {
+  margin-left: 10px;
+}
+
+.input-num {
+  width: 100%
+}
+
+:host ::ng-deep .p-inputnumber{
+  width: 100%
+}
+
+:host ::ng-deep input {
+  &.dirty.ng-untouched {
+    border: 1px solid red;
+  }
+}
+
+:host ::ng-deep .p-inputtext.ng-dirty.ng-untouched {
+  border: 1px solid red;
+}
+
+:host ::ng-deep .p-element.ng-dirty.ng-untouched .p-password input {
+  border: 1px solid red;
+}

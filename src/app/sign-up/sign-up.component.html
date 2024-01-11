@@ -1,0 +1,74 @@
+<form [formGroup]="signUpForm" (ngSubmit)="submit()">
+  <div class="grid">
+    <div class="col">
+      <div class="txt-holder"><span class="form-pi pi pi-user"></span>Name:</div>
+      <input type="text" pInputText placeholder="Name" class="reg-input" formControlName="name"/>
+      <div class="error" *ngIf="signUpForm.controls.name.invalid && signUpForm.controls.name.touched">
+        <p-message severity="error" text="Please Fill The Name"></p-message>
+      </div>
+      <div class="txt-holder"><span class="form-pi pi pi-user"></span>Surname:</div>
+      <input type="text" pInputText placeholder="Surname" class="reg-input" formControlName="surname"/>
+      <div class="error" *ngIf="signUpForm.controls.surname.invalid && signUpForm.controls.surname.touched">
+        <p-message severity="error" text="Please Fill The Surname"></p-message>
+      </div>
+      <div class="txt-holder"><span class="form-pi pi pi-comment"></span>Email:</div>
+      <input type="text" pInputText placeholder="Email" class="reg-input" formControlName="email"/>
+      <div class="error" *ngIf="signUpForm.controls.email.touched">
+        <p-message *ngIf="signUpForm.controls.email.errors?.['required']" severity="error" text="Please Fill The Email"></p-message>
+      </div>
+      <div class="error" *ngIf="signUpForm.controls.email.hasError('pattern')">
+        <p-message severity="error" text="Email Is Not Correct"></p-message>
+      </div>
+      <ng-container *ngIf="emailAlreadyExist">
+        <div class="error">
+          <p-message severity="error" text="Email Already Exist"></p-message>
+        </div>
+      </ng-container>
+
+      <div class="txt-holder"><span class="form-pi pi pi-phone"></span>Phone Number:</div>
+
+      <input pInputText pKeyFilter="int" placeholder="Phone Number" class="input-num" formControlName="phoneNumber"
+             [maxlength]="9"/>
+
+      <div class="phone-number-error error"
+           *ngIf="signUpForm.controls.phoneNumber.invalid && signUpForm.controls.phoneNumber.hasError('required') && signUpForm.controls.phoneNumber.touched">
+        <p-message severity="error" text="Please Fill The Phone Number"></p-message>
+      </div>
+      <div class="phone-number-error error" *ngIf="signUpForm.controls.phoneNumber.hasError('minlength')">
+        <p-message severity="error" text="Please Fill The Full Phone Number"></p-message>
+      </div>
+    </div>
+
+
+    <div class="col">
+      <div class="txt-holder"><span class="form-pi pi pi-lock"></span>Password:</div>
+      <p-password [toggleMask]="true" class="reg-input" placeholder="Password" formControlName="password"></p-password>
+      <div class="error" *ngIf="signUpForm.controls.password.invalid && signUpForm.controls.password.touched">
+        <p-message severity="error" text="Please Fill The Password"></p-message>
+      </div>
+      <div class="txt-holder"><span class="form-pi pi pi-lock"></span>Confirm Password:</div>
+      <span class="p-input-icon-right">
+      <i class="icon pi " [ngClass]="eyeShow ? 'pi-eye' : 'pi-eye-slash'" (click)="showHide()"></i>
+      <input pInputText class="reg-input" [type]="inputType" placeholder="Confirm Password"
+             formControlName="confirmPassword">
+      </span>
+      <div class="error"
+           *ngIf="signUpForm.controls.confirmPassword.invalid && signUpForm.controls.confirmPassword.touched">
+        <p-message severity="error" text="Please Fill The Password"></p-message>
+      </div>
+
+      <div class="error"
+           *ngIf="passwordsDontMatch">
+          <p-message severity="error" text="Passwords Didn't Match"></p-message>
+      </div>
+
+      <a class="question" (click)="showLoginModal()">Already have an account?</a>
+
+      <div class="confirmation-button">
+        <p-button label="Cancel" severity="warning" class="cancel-button" (click)="onClose()"></p-button>
+        <p-button  label="Sign-Up" class="submit_btn" type="submit"></p-button>
+      </div>
+
+    </div>
+  </div>
+</form>

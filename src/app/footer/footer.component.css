@@ -1,0 +1,18 @@
+p-tabMenu{
+  border-top: 2px solid #e5e7eb;
+  margin-top: auto;
+}
+
+.p-3:hover	{
+  color: #3B82F6;
+  border-bottom: 2px solid #3B82F6;
+}
+
+.activeLink{
+  color: red
+}
+
+.active{
+  color: #D57630;
+  border-bottom: 2px solid #D57630;
+}

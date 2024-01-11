@@ -1,0 +1,294 @@
+{
+  "users": [
+    {
+      "id": "84a5",
+      "name": "firstUser",
+      "surname": "FirstUser",
+      "email": "firstuser@mail.ru",
+      "phoneNumber": "123456789",
+      "password": "firstuser2003",
+      "role": "0"
+    },
+    {
+      "id": "1fb3",
+      "name": "admin",
+      "surname": "admin",
+      "email": "admin@mail.ru",
+      "phoneNumber": "999999999",
+      "password": "adminadmin123",
+      "role": "1"
+    },
+    {
+      "id": "1378",
+      "name": "hey",
+      "surname": "hey",
+      "email": "heyhey@mail.ru",
+      "phoneNumber": "999999999",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "a9b8",
+      "name": "sdsd",
+      "surname": "sdsdsd",
+      "email": "sdsdsdsds@mail.ru",
+      "phoneNumber": "123456789",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "daad",
+      "name": "sdsddddddddddddddddddd",
+      "surname": "sdsdsds",
+      "email": "ssdsdsd@mail.ru",
+      "phoneNumber": "123465789",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "5387",
+      "name": "ededfc",
+      "surname": "pom,po,po,",
+      "email": "mpompompmp@mail.ru",
+      "phoneNumber": "789789798",
+      "password": "789789789",
+      "role": "0"
+    },
+    {
+      "id": "3c35",
+      "name": "489498498",
+      "surname": "9849849849",
+      "email": "54989881891681@mail.ru",
+      "phoneNumber": "468987984",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "11a7",
+      "name": "sddsdsd",
+      "surname": "sdsdsdsdsd",
+      "email": "heyhwey@mail.ru",
+      "phoneNumber": "549849849",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "3ccd",
+      "name": "d76e4fd8e4fef",
+      "surname": "hyuyuvyu",
+      "email": "heyheye@mail.ru",
+      "phoneNumber": "851658168",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "edea",
+      "name": "sdsds",
+      "surname": "dsdsdsd",
+      "email": "heyhessssy@mail.ru",
+      "phoneNumber": "123465798",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "de95",
+      "name": "fughrugi",
+      "surname": "ruigbruifgui",
+      "email": "hufrgbfibgisbdgd@mail.ru",
+      "phoneNumber": "484849848",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "556b",
+      "name": "sds",
+      "surname": "dsdsds",
+      "email": "dsdsdsdsd@mail.ru",
+      "phoneNumber": "484848498",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "1619",
+      "name": "sdsdsdsdsds",
+      "surname": "dsdsdsds",
+      "email": "dsdsdsdsddddd@mail.ru",
+      "phoneNumber": "789789789",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "1585",
+      "name": "sdsd",
+      "surname": "sdsdsdsdsds",
+      "email": "dsdsdsd@mail.ru",
+      "phoneNumber": "798789789",
+      "password": "78789",
+      "role": "0"
+    },
+    {
+      "id": "f943",
+      "name": "sdsdsdsdsdsd",
+      "surname": "sdsdsdsdsdsdsdsdsdsds",
+      "email": "dsdsdsdwewwwwwwwwwww@mail.ru",
+      "phoneNumber": "789789789",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "7354",
+      "name": "7/7/7/74848",
+      "surname": "97894981981",
+      "email": "funbbgtrvfbrnugbpsra@mail.ru",
+      "phoneNumber": "789789789",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "6cd6",
+      "name": "798789798978798",
+      "surname": "787989878789",
+      "email": "dnfiudnfuionbdiofnbf@mail.ru",
+      "phoneNumber": "789787987",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "e088",
+      "name": "wwwwwwwwwww",
+      "surname": "wwwwwwwwwwwwwww",
+      "email": "wwwwwwwwwwwww@mail.ru",
+      "phoneNumber": "789789789",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "5b83",
+      "name": "qqqqqqqqqq",
+      "surname": "qqqqqqqqqqqq",
+      "email": "qqqqqqqqqqqqqqqqqqq@mail.ru",
+      "phoneNumber": "789798798",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "3dbc",
+      "name": "ddddddddddddd",
+      "surname": "dddddddd",
+      "email": "ddddddddddd@mail.ru",
+      "phoneNumber": "789798987",
+      "password": "798789",
+      "role": "0"
+    },
+    {
+      "id": "e229",
+      "name": "ddddddddddddd",
+      "surname": "dddddddd",
+      "email": "ddddddddddeeeeed@mail.ru",
+      "phoneNumber": "789798987",
+      "password": "798789",
+      "role": "0"
+    },
+    {
+      "id": "fc53",
+      "name": "ddddddddddddd",
+      "surname": "dddddddd",
+      "email": "ddddddddddeeeeeeeeeeeeeeeeeeed@mail.ru",
+      "phoneNumber": "789798987",
+      "password": "798789",
+      "role": "0"
+    },
+    {
+      "id": "1327",
+      "name": "ddddddddddddd",
+      "surname": "dddddddd",
+      "email": "dddddeeeeeeeeeeeeeeeeeeeeedddddeeeeeeeeeeeeeeeeeeed@mail.ru",
+      "phoneNumber": "789798987",
+      "password": "798789",
+      "role": "0"
+    },
+    {
+      "id": "639f",
+      "name": "vvvvvvvv",
+      "surname": "vvvvv",
+      "email": "vvvvvvv@mail.ru",
+      "phoneNumber": "789789789",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "19d6",
+      "name": "ttttttttttt",
+      "surname": "tttttttttttttttttt",
+      "email": "tttttttttttt@mail.ru",
+      "phoneNumber": "789798787",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "b931",
+      "name": "eeeeeeeeeeeeeeeeeeewwwwwww",
+      "surname": "wwwwwwwwwwweeeeeeeee",
+      "email": "rhfgryubgrybuiwrvguirwtguirthbubwptf@mail.ru",
+      "phoneNumber": "789789000",
+      "password": "789789789",
+      "role": "0"
+    },
+    {
+      "id": "013f",
+      "name": "vvvvvvvvvvvvvvvv",
+      "surname": "vvvvvvvvvvvvvvvvvvvvvvvvvvvv@mail.ru",
+      "email": "opopo@mail.ru",
+      "phoneNumber": "789789798",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "0b3a",
+      "name": "tttttttttttttt",
+      "surname": "tttttttttttttttttttt",
+      "email": "hdufidfbudivbildsa@mail.ru",
+      "phoneNumber": "123465798",
+      "password": "789789",
+      "role": "0"
+    },
+    {
+      "id": "d98e",
+      "name": "oooooooo",
+      "surname": "oooooooo",
+      "email": "oooooooo@mail.ryu",
+      "phoneNumber": "849849879",
+      "password": "789789",
+      "role": "0"
+    }
+  ],
+  "products": {
+    "food": {
+      "0": [],
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": []
+    },
+    "Drinks": {
+      "0": [],
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": []
+    },
+    "Cakes": {
+      "0": [],
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  }
+}

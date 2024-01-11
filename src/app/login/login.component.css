@@ -1,0 +1,84 @@
+.login-form{
+  width: 400px;
+  height: 400px;
+  background-color: red;
+  margin: 0 auto;
+}
+
+.container{
+  width: 280px
+}
+
+.form-input{
+  margin-top: 10px;
+  margin-left: 6px
+}
+
+.submit-container{
+  margin-top: 14px;
+  text-align: center;
+}
+
+:host ::ng-deep .p-button.p-button-raised{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.dont-have-account-txt {
+  margin-left: 8px;
+  text-decoration: underline;
+  color: #3B82F6;
+  position: relative;
+  top: 7px;
+}
+
+.dont-have-account-txt:hover{
+  cursor: pointer;
+}
+
+.error {
+  width: 239px;
+  margin: 0 auto;
+  margin-top: 4px;
+}
+
+:host ::ng-deep .p-inline-message-text{
+  font-size: 14px;
+}
+
+input {
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+}
+
+.content{
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep .p-password-input{
+  width: 98%
+}
+
+.eye{
+  position: absolute;
+  left: 82%;
+  margin-top: 10px;
+}
+
+:host ::ng-deep .reg-input.ng-invalid.ng-touched .p-inputtext.p-inputmask {
+  border: 1px solid red
+}
+
+input {
+  &.ng-valid.ng-touched {
+    border: 1px solid #4CAF50;
+  }
+}
+
+input {
+  &.ng-valid.ng-untouched {
+    border: 1px solid red;
+  }
+}
