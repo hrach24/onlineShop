@@ -29,6 +29,8 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from "primeng/api";
 import { KeyFilterModule } from "primeng/keyfilter";
 import { HttpClientModule } from "@angular/common/http";
+import { AdminComponent } from './admin/admin.component';
+import {AdminModule} from "./admin/admin/admin.module";
 
 
 @NgModule({
@@ -41,7 +43,7 @@ import { HttpClientModule } from "@angular/common/http";
     LoginComponent,
     SignUpComponent,
     ErrorComponent,
-    ProductsComponent
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +66,7 @@ import { HttpClientModule } from "@angular/common/http";
     ToastModule,
     KeyFilterModule,
     HttpClientModule,
+    AdminModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
