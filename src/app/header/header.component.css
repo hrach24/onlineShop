@@ -158,3 +158,53 @@
     margin-right: 4px;
   }
 }
+
+.pi-heart-fill:hover {
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.pi-shopping-cart:hover {
+  font-size: 35px;
+  cursor: pointer;
+}
+
+:host ::ng-deep .dropdown div {
+  width: 362px;
+}
+
+:host ::ng-deep .dropdown div ul li div a {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+:host ::ng-deep .p-menuitem-content a .p-menuitem-icon{
+  /*color: #CAC5C2;*/
+  color: red;
+  font-size: 18px;
+}
+
+:host ::ng-deep .p-menuitem-link{
+  background-color: white;
+}
+
+:host ::ng-deep .dropdown div ul li div a:hover {
+  background-color: pink;
+  opacity: 0.9
+}
+
+.user-img img:hover{
+  cursor: pointer;
+}
+
+:host ::ng-deep  .p-submenu-header{
+  border-bottom: 2px solid grey;
+}
+
+:host ::ng-deep  .p-submenu-header span{
+    text-transform: capitalize;
+}
+
+.user-dropdown .pi{
+  color: red
+}

@@ -18,7 +18,5 @@ export class HomeComponent implements OnInit{
       {label: 'Cakes', routerLink: '/cakes'},
       {label: 'Drinks', routerLink: '/drinks'}
     ];
-
   }
-
 }

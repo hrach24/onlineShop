@@ -2,25 +2,34 @@
   <form (ngSubmit)="submit()" [formGroup]="loginForm">
     <span class="pi pi-user"></span>
     <input type="text" pInputText placeholder="Email" class="form-input email-input" formControlName="email"/>
-    <div class="error" *ngIf="loginForm.controls.email.touched">
-      <p-message *ngIf="loginForm.controls.email.errors?.['required']" severity="error" text="Please Fill The Email"></p-message>
-    </div>
-    <div class="error" *ngIf="loginForm.controls.email.hasError('pattern')">
-      <p-message severity="error" text="Email Is Not Correct"></p-message>
-    </div>
+
+    <ng-container  *ngIf="loginForm.controls.email.touched">
+      <div class="error">
+        <p-message *ngIf="loginForm.controls.email.errors?.['required']" severity="error" text="Please Fill The Email"></p-message>
+      </div>
+    </ng-container>
+    <ng-container  *ngIf="loginForm.controls.email.hasError('pattern')">
+      <div class="error">
+        <p-message severity="error" text="Email Is Not Correct"></p-message>
+      </div>
+    </ng-container>
+
     <div class="content">
       <span class="pi pi-lock"></span>
       <i class="eye icon pi " [ngClass]="eyeShow ? 'pi-eye' : 'pi-eye-slash'" (click)="showHide()"></i>
       <input pInputText type="text" class="form-input reg-input" placeholder="Password" [type]="inputType" formControlName="password">
     </div>
 
-    <div class="error" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
-      <p-message severity="error" text="Please Fill The Email"></p-message>
-    </div>
-
-    <div class="error" *ngIf="wrongEmailAndPassword">
-      <p-message severity="error" text="Please Fill The Correct Email and Password"></p-message>
-    </div>
+    <ng-container *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+      <div class="error">
+        <p-message severity="error" text="Please Fill The Email"></p-message>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="wrongEmailAndPassword">
+      <div class="error">
+        <p-message severity="error" text="Please Fill The Correct Email and Password"></p-message>
+      </div>
+    </ng-container>
 
     <a class="dont-have-account-txt" (click)="openSignUpPopUp()">Don't have an account ? </a>
     <div class="submit-container">

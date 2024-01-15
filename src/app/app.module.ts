@@ -29,6 +29,7 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from "primeng/api";
 import { KeyFilterModule } from "primeng/keyfilter";
 import { HttpClientModule } from "@angular/common/http";
+import { MenuModule } from "primeng/menu";
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { HttpClientModule } from "@angular/common/http";
     ToastModule,
     KeyFilterModule,
     HttpClientModule,
+    MenuModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

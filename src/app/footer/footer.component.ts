@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {MenuItem} from "primeng/api";
+import { Component, OnInit } from '@angular/core';
+import { MenuItem } from "primeng/api";
 
 @Component({
   selector: 'app-footer',
@@ -14,6 +14,5 @@ export class FooterComponent implements OnInit{
       { label: 'About Us', icon: 'pi pi-fw pi-users', routerLink: 'about-us' },
       { label: 'Contact Us', icon: 'pi pi-fw pi-phone', routerLink: 'contact-us' },
     ];
-
   }
 }

@@ -7,8 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ErrorComponent implements OnInit{
     public str: string  = '';
-    ngOnInit(){
-      let errorArr = 'ERROR 404';
+    ngOnInit(): void{
+      let errorArr: string = 'ERROR 404';
       errorArr.split('').map((i, index) => {
         setTimeout(() => {
           this.str += i;

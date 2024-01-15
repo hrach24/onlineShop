@@ -16,12 +16,11 @@ export class LoginComponent implements OnInit{
   public eyeShow:boolean;
   public wrongEmailAndPassword: boolean
   public inputType: string = 'password';
-  private getAllUsers: IUserInterface | any;
+  private getAllUsers: IUserInterface[];
   public loginForm: FormGroup<ILoginForm> = new FormGroup<ILoginForm>(<ILoginForm>{
     email: new FormControl('', [ Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$") ]),
     password: new FormControl('', Validators.required),
   })
-
 
   constructor(
     private ref: DynamicDialogRef,
@@ -40,27 +39,26 @@ export class LoginComponent implements OnInit{
     } else {
       this.eyeShow = true;
       this.inputType = 'password';
-
     }
   }
 
-  openSignUpPopUp(): void{
-    this.ref.close(true)
+  public openSignUpPopUp(): void{
+    this.ref.close(true);
   }
 
-  submit(): void{
+  public submit(): void{
     if (!this.loginForm.invalid) {
-      this.http.get('http://localhost:3000/users')
-        .subscribe(res => {
+      this.http.get<IUserInterface[]>('http://localhost:3000/users')
+        .subscribe((res: IUserInterface[]) => {
         this.getAllUsers = res;
-        let loggedInUser = this.getAllUsers.find((user: any) =>  {
+        let loggedInUser:IUserInterface | undefined = this.getAllUsers.find((user: any) =>  {
           if (user.email === this.loginForm.value.email && user.password === this.loginForm.value.password){
             return user
 
           }
         });
         if (loggedInUser){
-          this.userService.settingTrueVal(loggedInUser);
+          this.userService.settingTrueVal(true, loggedInUser);
           this.ref.close();
           let firstLetterUpperCaseUserName = loggedInUser.name[0].toUpperCase() + loggedInUser.name.slice(1)
           let firstLetterUpperCaseUserSurname = loggedInUser.surname[0].toUpperCase() + loggedInUser.surname.slice(1)

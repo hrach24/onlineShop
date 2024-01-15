@@ -36,7 +36,7 @@ export class SignUpComponent implements OnInit {
     private signUpUserService: AuthService,
   ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   public showHide(): void {
     if (this.eyeShow) {
@@ -70,14 +70,10 @@ export class SignUpComponent implements OnInit {
     } else {
       this.passwordsDontMatch = false;
       let newUser: IUserInterface = {
-        name: this.signUpForm.value.name,
-        surname: this.signUpForm.value.surname,
-        email: this.signUpForm.value.email,
-        phoneNumber: this.signUpForm.value.phoneNumber,
-        password: this.signUpForm.value.confirmPassword,
-        role: '0',
+        ...this.signUpForm.getRawValue(),
+        role: '1'
+      };
 
-      }
       this.http.get('http://localhost:3000/users')
         .subscribe(res => {
         this.getAllUsers = res;
@@ -89,12 +85,12 @@ export class SignUpComponent implements OnInit {
         }else {
           this.http.post('http://localhost:3000/users', newUser)
             .subscribe(res => {
-            this.signUpUserService.settingTrueVal(JSON.stringify(newUser));
+            this.signUpUserService.settingTrueVal(true, newUser);
             this.ref.close();
             this.messageService.add({ severity: 'success', summary: 'Successfully Signed-up', detail: 'Congratulations !' });
+
           })
         }
-
       })
     }
   }
