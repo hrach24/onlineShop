@@ -30,6 +30,8 @@ import { MessageService } from "primeng/api";
 import { KeyFilterModule } from "primeng/keyfilter";
 import { HttpClientModule } from "@angular/common/http";
 import { MenuModule } from "primeng/menu";
+import { AdminComponent } from './admin/admin.component';
+import {AdminModule} from "./admin/admin/admin.module";
 
 
 @NgModule({
@@ -42,7 +44,7 @@ import { MenuModule } from "primeng/menu";
     LoginComponent,
     SignUpComponent,
     ErrorComponent,
-    ProductsComponent
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,7 @@ import { MenuModule } from "primeng/menu";
     KeyFilterModule,
     HttpClientModule,
     MenuModule,
+    AdminModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
