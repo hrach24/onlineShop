@@ -435,31 +435,340 @@
   ],
   "products": {
     "food": {
-      "0": [],
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": []
+      "pizza": [
+        {
+          "id": "1",
+          "title": "Margherita Pizza",
+          "img": "src/assets/images/food/pizza/MargheritaPizza.png",
+          "ingredients": "Pizza Sauce, Fresh Mozzarella Cheese, Fresh Basil Leaves, Olive Oil, Salt and Pepper",
+          "description": "These are classic and popular pizza varieties. You can, of course, customize the ingredients based on your preferences or explore various other pizza recipes with different toppings and flavors.",
+          "price": "20$"
+        },
+        {
+          "id": "2",
+          "title": "Pepperoni  Pizza",
+          "img": "src/assets/images/food/pizza/PepperoniPizza.png",
+          "ingredients": "Pizza Sauce, Mozzarella Cheese, Pepperoni Slices, Olive Oil, Dried Oregano",
+          "description": "These are classic and popular pizza varieties. You can, of course, customize the ingredients based on your preferences or explore various other pizza recipes with different toppings and flavors.",
+          "price": "17$"
+        },
+        {
+          "id": "3",
+          "title": "Margarita Pizza",
+          "img": "src/assets/images/food/pizza/MargaritaPizza.png",
+          "ingredients": "Pizza Sauce (or fresh sliced tomatoes) Fresh Mozzarella Cheese, sliced, Fresh Basil Leaves, Olive Oil, Balsamic Glaze (optional, for drizzling), Salt and Pepper to taste",
+          "description": "The Margarita Pizza is a classic that highlights the simplicity of fresh ingredients, including tomatoes, mozzarella, and basil. The combination of these flavors creates a delightful and elegant pizza. Customize it based on your preference, and savor the classic taste of a Margarita Pizza!",
+          "price": "23$"
+        }
+      ],
+      "barbecue": [
+        {
+          "id": "1",
+          "title": "Barbecue Chicken Skewers",
+          "img": "src/assets/images/food/barbecue/BarbecueChickenSkewers.png",
+          "ingredients": "Chicken Breast or Thighs, cut into chunks Barbecue Sauce (store-bought or homemade) Red Onion, cut into chunks Bell Peppers (mix of colors), cut into chunks Pineapple chunks (optional, for sweetness) Wooden or metal skewers",
+          "description": "Flavor-packed chicken skewers, marinated in zesty olive oil, garlic, and spices, grilled to perfection with bell peppers and onions. Glazed in smoky barbecue sauce, they're a guaranteed crowd-pleaser, bringing summer's taste to your table. Savor the irresistible blend of charred perfection and succulent chicken.",
+          "price": "40$"
+        },
+        {
+          "id": "2",
+          "title": "Barbecue Bliss Marinade",
+          "img": "src/assets/images/food/barbecue/BarbecueBlissMarinade.png",
+          "ingredients": "Olive Oil Garlic, minced Paprika Cumin Brown Sugar Salt and Pepper to taste",
+          "description": "Unlock barbecue perfection with our signature marinade. A symphony of smoky barbecue sauce, zesty garlic, and savory spices transforms your ingredients into a flavor-packed masterpiece. Ideal for chicken, beef, or veggies, this secret sauce guarantees a succulent, char-kissed experience. Elevate your barbecue game and savor the bliss with every bite.",
+          "price": "42$"
+        }
+      ],
+      "seafood": [
+        {
+          "id": "1",
+          "title": "Grilled Salmon with Lemon and Dill",
+          "img": "src/assets/images/food/seafood/GrilledSalmonLemonDill.png",
+          "ingredients": "Fresh Salmon Fillets, Olive Oil, Lemon Juice, Garlic, minced, Fresh Dill, chopped, Salt and Pepper to taste, Lemon wedges (for serving)",
+          "description": "Savor the elegance of our Grilled Salmon — fresh fillets marinated in olive oil, zesty lemon, garlic, and dill. The grill imparts a succulent smokiness, creating a harmonious symphony of flavors. A light and refreshing dish, each bite is a celebration of the sea. Indulge in the perfect balance of citrus, herbs, and perfectly grilled salmon, a culinary experience that delights the senses.",
+          "price": "60$"
+        },
+        {
+          "id": "2",
+          "title": "Shrimp Scampi",
+          "img": "src/assets/images/food/seafood/ShrimpScamp.png",
+          "ingredients": "Large Shrimp, peeled and deveined, Butter, Olive, Oil, Garlic, minced, White Wine, Lemon Juice, Red Pepper Flakes (optional, for some heat), Fresh Parsley, chopped Salt and Pepper to taste Linguine or Pasta of choice (optional, for serving)",
+          "description": "These classic Shrimp Scampi ingredients come together to create a flavorful and aromatic dish. Adjust the quantities to your liking, and serve the shrimp scampi over pasta or with crusty bread to soak up the delicious garlic and butter sauce. Enjoy this quick and elegant seafood delight!",
+          "price": "61$"
+        },
+        {
+          "id": "3",
+          "title": "Crab Cakes",
+          "img": "src/assets/images/food/seafood/crabCake.png",
+          "ingredients": "Lump Crab Meat, Breadcrumbs, Mayonnaise, Dijon Mustard, Worcestershire Sauce, Old Bay Seasoning (or your preferred seafood seasoning), Fresh Parsley, chopped, Egg Salt and Pepper to taste Olive Oil or Butter (for frying)",
+          "description": "Lump crab meat mixed with breadcrumbs, mayonnaise, Dijon mustard, and seasonings. Formed into patties and pan-fried until golden brown, crab cakes are often served with a side of remoulade sauce for a delicious seafood treat.",
+          "price": "65$"
+        }
+      ],
+      "burgers": [
+        {
+          "id": "1",
+          "title": "Classic Cheeseburger",
+          "img": "src/assets/images/food/burgers/ClassicCheeseburger.png",
+          "ingredients": "Ground Beef Patties Cheese Slices (usually cheddar or American) Burger Buns Lettuce, Tomato, Onion (optional) Ketchup, Mustard, Mayonnaise",
+          "description": "The Classic Cheeseburger is a timeless favorite. Succulent beef patties topped with melted cheese, nestled in a soft burger bun, and adorned with fresh lettuce, tomato, and onion if desired. The perfect combination of flavors and textures, enhanced by classic condiments.",
+          "price": "10$"
+        },
+        {
+          "id": "2",
+          "title": "Mushroom Swiss Burger",
+          "img": "src/assets/images/food/burgers/MushroomSwissBurger.png",
+          "ingredients": "Ground Beef Patties, Swiss Cheese Slices, Sautéed Mushrooms, Burger Buns, Caramelized Onions (optional, Dijon Mustard, Mayonnaise",
+          "description": "Elevate your burger experience with the Mushroom Swiss Burger. Juicy beef patties topped with melted Swiss cheese and a generous serving of sautéed mushrooms. Served on a bun with optional caramelized onions and a spread of Dijon mustard and mayonnaise for a sophisticated and savory delight.",
+          "price": "8$"
+        },
+        {
+          "id": "3",
+          "title": "BBQ Bacon Avocado Burger",
+          "img": "src/assets/images/food/burgers/BBQBaconAvocadoBurger.png",
+          "ingredients": "Ground Beef, Patties Bacon, Strips Cheddar, Cheese Slices, Avocado Slices, Burger Buns, BBQ Sauce, Lettuce, Tomato (optional)",
+          "description": "Indulge in the BBQ Bacon Avocado Burger, a flavor-packed creation. Succulent beef patties topped with crispy bacon, melted cheddar, and creamy avocado slices. Drizzled with smoky BBQ sauce, this burger offers a mouthwatering combination of savory, smoky, and creamy textures. Add lettuce and tomato for a refreshing touch.",
+          "price": "9$"
+        }
+      ],
+      "sushi": [
+        {
+          "id": "1",
+          "title": "Spicy Tuna Roll",
+          "img": "src/assets/images/food/sushi/SpicyTunaRoll.png",
+          "ingredients": "Sushi Rice Nori (Seaweed) Fresh Tuna, diced Spicy Mayo Sriracha Cucumber, julienned Avocado slices (optional)",
+          "description": "The Spicy Tuna Roll is a popular choice for sushi lovers. This roll features a filling of fresh, diced tuna mixed with spicy mayo and a hint of Sriracha for a kick. Combined with crisp cucumber and optionally creamy avocado, it's wrapped in nori and sushi rice for a delightful fusion of flavors and textures.",
+          "price": "100$"
+        },
+        {
+          "id": "2",
+          "title": "Dragon Roll",
+          "img": "src/assets/images/food/sushi/DragonRoll.png",
+          "ingredients": "Sushi Rice Nori (Seaweed) Eel (Unagi) or Grilled Shrimp Avocado slices Cucumber, julienned Eel Sauce Tobiko (Fish Roe) for garnish",
+          "description": "The Dragon Roll is a visually stunning sushi creation. It typically features eel or grilled shrimp as the main protein, topped with avocado slices to resemble dragon scales. Drizzled with eel sauce and adorned with colorful tobiko, this roll offers a perfect blend of savory and sweet flavors.",
+          "price": "120$"
+        },
+        {
+          "id": "3",
+          "title": "California Roll",
+          "img": "src/assets/images/food/sushi/CaliforniaRoll.png",
+          "ingredients": "Sushi Rice, Nori (Seaweed) Imitation Crab (or real crab), shredded Avocado slices Cucumber, julienned Sesame Seeds Soy Sauce and Wasabi for dipping",
+          "description": "The California Roll is a classic and approachable sushi option. Filled with a combination of shredded crab, creamy avocado, and crisp cucumber, it is rolled in nori and sushi rice, then sprinkled with sesame seeds. A versatile and tasty choice for sushi enthusiasts of all levels.",
+          "price": "220$"
+        }
+      ],
+      "fish": [
+        {
+          "id": "1",
+          "title": "Fish Tacos with Mango Salsa",
+          "img": "src/assets/images/food/fish/FishTacosMangoSalsa.png",
+          "ingredients": "White Fish Fillets (such as cod or tilapia) Corn or Flour Tortillas Cabbage, shredded Mango Salsa (mango, red onion, cilantro, lime juice) Avocado slices Chipotle Mayo Lime wedges (for serving)",
+          "description": "Fish Tacos with Mango Salsa bring a burst of flavors to your plate. Crispy white fish fillets are nestled in warm tortillas, topped with crunchy shredded cabbage, vibrant mango salsa, creamy avocado, and a drizzle of chipotle mayo. These tacos offer a perfect balance of textures and a tropical twist.",
+          "price": "30$"
+        },
+        {
+          "id": "2",
+          "title": "Baked Cod with Herbed Butter",
+          "img": "src/assets/images/food/fish/BakedCodHerbedButter.png",
+          "ingredients": "Cod Fillets Butter, melted Fresh Herbs (such as parsley, thyme, or dill) Garlic, minced Lemon Zest Salt and Pepper to taste Lemon wedges (for serving)",
+          "description": "Baked Cod with Herbed Butter is a simple and flavorful dish. Cod fillets are coated with a herbed butter mixture made with melted butter, fresh herbs, minced garlic, and lemon zest. Baked to flaky perfection, this dish is a delightful showcase of the natural flavors of the cod enhanced by the aromatic herb-infused butter.",
+          "price": "35$"
+        },
+        {
+          "id": "3",
+          "title": "CrispyPanko-CrustedHalibut",
+          "img": "src/assets/images/food/fish/CrispyPanko-CrustedHalibut.png",
+          "ingredients": "Halibut Fillets Panko Bread Crumbs All-purpose Flour Eggs Lemon Zest Paprika Salt and Pepper to taste Olive Oil for frying Tartar Sauce (for serving)",
+          "description": "Crispy Panko-Crusted Halibut is a delightful dish with a satisfying crunch. Halibut fillets are coated in a mixture of panko bread crumbs, flour, lemon zest, paprika, salt, and pepper. After a dip in beaten eggs, they are pan-fried until golden brown and crispy. Served with a side of tartar sauce, this dish offers a perfect blend of crispy texture and flaky halibut goodness. Enjoy a seafood experience that's both simple and delicious.",
+          "price": "45$"
+        }
+      ]
     },
-    "Drinks": {
-      "0": [],
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": []
+    "drinks": {
+      "tea": [
+        {
+          "id": "1",
+          "title": "Chamomile Citrus Bliss",
+          "img": "src/assets/images/drinks/tea/ChamomileCitrusBliss.png",
+          "ingredients": "Chamomile Tea Bags Fresh Lemon Slices Honey or Agave Syrup (optional)",
+          "description": "Chamomile Citrus Bliss is a calming infusion of chamomile tea enhanced with the bright notes of fresh lemon. This soothing blend is perfect for relaxation, offering a gentle and comforting experience. Optionally sweetened with honey or agave syrup, it's a warm cup of tranquility to unwind.",
+          "price": "4$"
+        },
+        {
+          "id": "2",
+          "title": "Spiced Chai Delight",
+          "img": "src/assets/images/fish/SpicedChaiDelight.png",
+          "ingredients": "Black Tea Bags Whole Spices (Cinnamon, Cardamom, Cloves) Milk (or non-dairy alternative) Sweetener (Sugar, Honey, or Maple Syrup)",
+          "description": "Spiced Chai Delight is a rich and aromatic black tea infused with a medley of warm spices. Cinnamon, cardamom, and cloves create a flavorful dance on the palate. Blended with milk and sweetened to taste, this spiced chai offers a cozy and invigorating treat.",
+          "price": "6$"
+        },
+        {
+          "id": "3",
+          "title": "Minty Fresh Green Tea",
+          "img": "src/assets/images/drinks/tea/MintyFreshGreenTea.png",
+          "ingredients": "Green Tea Bags Fresh Mint Leaves Lemon Wedges Honey (optional)",
+          "description": "Minty Fresh Green Tea is a revitalizing blend of green tea infused with the invigorating essence of fresh mint. With a squeeze of lemon for brightness and optional honey for sweetness, this tea provides a refreshing and uplifting experience. Enjoy the harmonious balance of green tea and mint for a burst of natural flavors.",
+          "price": "7$"
+        }
+      ],
+      "coffee": [
+        {
+          "id": "1",
+          "title": "Vanilla Latte",
+          "img": "src/assets/images/drinks/coffee/VanillaLatte.png",
+          "ingredients": "Espresso Shots (or strong brewed coffee), Steamed Milk Vanilla Syrup Whipped Cream (optional)",
+          "description": "The Vanilla Latte is a classic coffee indulgence. Rich espresso shots are combined with velvety steamed milk and a hint of sweet vanilla syrup, creating a smooth and comforting drink. Topped with optional whipped cream, it's a delightful blend of bold coffee and sweet, creamy goodness.",
+          "price": "2$"
+        },
+        {
+          "id": "2",
+          "title": "Caramel Macchiato",
+          "img": "src/assets/images/drinks/coffee/Caramel Macchiato.png",
+          "ingredients": "Espresso Shots (or strong brewed coffee) Steamed Milk Caramel Syrup Vanilla Syrup",
+          "description": "Indulge in the Caramel Macchiato, a caramel-infused coffee masterpiece. Espresso shots are layered with steamed milk and a swirl of both caramel and vanilla syrups. The result is a visually stunning and deliciously sweet coffee drink that offers a perfect balance of bold espresso and caramel richness.",
+          "price": "3$"
+        },
+        {
+          "id": "3",
+          "title": "Iced Mocha",
+          "img": "src/assets/images/drinks/coffee/IcedMocha.png",
+          "ingredients": "Espresso Shots (or strong brewed coffee, cooled) Chocolate Syrup Milk Ice Cubes Whipped Cream (optional)",
+          "description": "Cool down with an Iced Mocha, a refreshing coffee treat. Espresso shots or strong brewed coffee are blended with chocolate syrup and chilled milk, poured over ice for a delightful iced beverage. Top it off with whipped cream for an extra touch of indulgence, creating a perfect balance of coffee and chocolate flavors.",
+          "price": "6$"
+        }
+      ],
+      "fresh": [
+        {
+          "id": "1",
+          "title": "Tropical Fruit Splash",
+          "img": "src/assets/images/drinks/fresh/TropicalFruitSplash.png",
+          "ingredients": "Pineapple chunks Mango slices Kiwi slices Strawberries, halved Fresh Mint Leaves Coconut Water Ice Cubes",
+          "description": "Tropical Fruit Splash is a vibrant blend of pineapple, mango, kiwi, and strawberries, creating a colorful and flavorful medley. Mixed with fresh mint leaves and coconut water, this drink is a refreshing taste of the tropics, perfect for a sunny day.",
+          "price": "8$"
+        },
+        {
+          "id": "2",
+          "title": "Berry Citrus Fusion",
+          "img": "src/assets/images/drinks/fresh/BerryCitrusFusion.png",
+          "ingredients": "Mixed Berries (blueberries, raspberries, blackberries) Orange segments Lime slices Basil Leaves Agave Syrup or Honey Sparkling Water Ice Cubes",
+          "description": "Berry Citrus Fusion is a delightful mix of assorted berries, citrusy orange and lime, and fragrant basil leaves. Sweetened with agave syrup or honey and topped with sparkling water, this drink offers a burst of berry goodness with a zesty kick.",
+          "price": "4$"
+        },
+        {
+          "id": "3",
+          "title": "Summer Melon Medley",
+          "img": "src/assets/images/drinks/fresh/SummerMelonMedley.png",
+          "ingredients": "Watermelon cubes Cantaloupe balls Honeydew slices Mint Leaves Lemon Juice Simple Syrup (water and sugar) Still or Sparkling Water Ice Cubes",
+          "description": "Summer Melon Medley is a hydrating blend of juicy watermelon, sweet cantaloupe, and refreshing honeydew, combined with mint leaves and a splash of lemon juice. Sweetened with simple syrup and mixed with still or sparkling water, this drink is a cool and delightful sip of summer.",
+          "price": "6$"
+        }
+      ],
+      "wine": [
+        {
+          "id": "1",
+          "title": "Cabernet Sauvignon",
+          "img": "src/assets/images/drinks/fresh/SummerMelonMedley.png",
+          "ingredients": "",
+          "description": "Cabernet Sauvignon is a red wine known for its bold and robust character. Originating from the Bordeaux region, it often features flavors of blackcurrant, plum, and hints of cedar or tobacco. It pairs well with hearty dishes like grilled steak or aged cheeses.",
+          "price": "24$"
+        },
+        {
+          "id": "2",
+          "title": "Chardonnay",
+          "img": "src/assets/images/drinks/wine/chardonnay.png",
+          "ingredients": "",
+          "description": "Chardonnay is a popular white wine known for its versatility. Originating from the Burgundy region, it can range from crisp and unoaked to rich and buttery. Flavors include green apple, citrus, and tropical fruits. Chardonnay pairs well with a variety of dishes, from seafood to creamy pasta.",
+          "price": "26$"
+        },
+        {
+          "id": "3",
+          "title": "Merlot",
+          "img": "src/assets/images/drinks/wine/Merlot.png",
+          "ingredients": "",
+          "description": "Merlot is a red wine known for its smooth, velvety texture and approachable flavor profile. Originating from the Bordeaux region, it often exhibits flavors of red fruits such as plum, cherry, and raspberry, along with hints of chocolate and herbs. Merlot is versatile and pairs well with a variety of dishes, making it a popular choice for those seeking a softer and more fruit-forward red wine.",
+          "price": "27$"
+        }
+      ]
     },
-    "Cakes": {
-      "0": [],
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
+    "cakes": {
+      "chocolate-cake": [
+        {
+          "id": "1",
+          "title": "Triple Chocolate Decadence Cake",
+          "img": "src/assets/images/cakes/chocolate-cakes/TripleChocolateDecadenceCake.png",
+          "ingredients": "All-purpose Flour Cocoa Powder Baking Powder Butter Sugar Eggs Vanilla Extract Dark Chocolate Chips Chocolate Ganache (for frosting)",
+          "description": "Indulge in the ultimate chocolate experience with the Triple Chocolate Decadence Cake. Layers of rich chocolate cake are interspersed with velvety dark chocolate chips. The crowning glory is a luscious chocolate ganache, creating a symphony of chocolate bliss.",
+          "price": "20$"
+        },
+        {
+          "id": "2",
+          "title": "Molten Lava Chocolate Cake",
+          "img": "src/assets/images/cakes/chocolate-cakes/MoltenLavaChocolateCake.png",
+          "ingredients": "Dark Chocolate, Butter, Eggs, Sugar, All-purpose Flour, Vanilla, Extract, Salt",
+          "description": "Experience pure chocolate ecstasy with the Molten Lava Chocolate Cake. As you cut into this individual-sized delight, a gooey, molten center of melted dark chocolate oozes out. Served warm, it's a heavenly treat for chocolate lovers.",
+          "price": "21$"
+        },
+        {
+          "id": "3",
+          "title": "White Chocolate Raspberry Swirl Cake",
+          "img": "src/assets/images/cakes/chocolate-cakes/WhiteChocolateRaspberrySwirlCake.png",
+          "ingredients": "All-purpose Flour, Cocoa Powder, Baking Powder, Butter, Sugar, Eggs, Vanilla Extract, White Chocolate Chips, Raspberry Jam (for swirl)",
+          "description": "Delight in the harmonious pairing of flavors in the White Chocolate Raspberry Swirl Cake. Moist chocolate cake layers are adorned with swirls of sweet raspberry jam and studded with creamy white chocolate chips. Each bite is a perfect blend of rich chocolate and fruity sweetness.",
+          "price": "28$"
+        }
+      ],
+      "cheesecake": [
+        {
+          "id": "1",
+          "title": "Classic New York Cheesecake",
+          "img": "src/assets/images/cakes/cheesecake/ClassicNewYorkCheesecake.png",
+          "ingredients": "Graham Cracker Crust, Cream Cheese, Sugar, Eggs, Sour Cream, Vanilla Extract, All-purpose Flour",
+          "description": "Indulge in the timeless elegance of the Classic New York Cheesecake. With a buttery graham cracker crust, this creamy and dense cheesecake is made with a blend of cream cheese, sugar, eggs, and a touch of sour cream. The result is a smooth and velvety dessert with a rich, satisfying taste.",
+          "price": "16$"
+        },
+        {
+          "id": "2",
+          "title": "Raspberry Swirl Cheesecake",
+          "img": "src/assets/images/cakes/cheesecake/chocolate-cakes/WhiteChocolateRaspberrySwirlCake.png",
+          "ingredients": "Graham Cracker Crust, Cream Cheese, Sugar, Eggs, Vanilla Extract, Fresh Raspberries, Raspberry Jam",
+          "description": "Elevate your cheesecake experience with the Raspberry Swirl Cheesecake. A luscious combination of creamy cheesecake and vibrant raspberry swirls, this dessert features a graham cracker crust and a delightful contrast of sweet and tart flavors. Each bite is a celebration of fruity indulgence.",
+          "price": "17$"
+        },
+        {
+          "id": "3",
+          "title": "Chocolate Marble Cheesecake",
+          "img": "src/assets/images/cakes/cheesecake/Chocolate Marble Cheesecake.png",
+          "ingredients": "Chocolate Cookie Crust, Cream Cheese, Sugar, Eggs, Vanilla Extract, Dark Chocolate, melted",
+          "description": "Delight in the artistic fusion of chocolate and cheesecake with the Chocolate Marble Cheesecake. With a chocolate cookie crust as the canvas, this dessert swirls rich, velvety chocolate through a classic cheesecake base. The result is a visually stunning and decadent treat that satisfies both chocolate and cheesecake cravings.",
+          "price": "10$"
+        }
+      ],
+      "fruit-cake": [
+        {
+          "id": "1",
+          "title": "Traditional Fruitcake",
+          "img": "src/assets/images/cakes/fruit-cakes/TraditionalFruitcake.png",
+          "ingredients": "All-purpose Flour, Butter, Brown Sugar, Eggs, Mixed Dried Fruits (raisins, currants, candied peel) Chopped Nuts (such as walnuts or almonds), Brandy or Rum (for soaking), Baking Powder, Cinnamon, Nutmeg, Allspice",
+          "description": "The Traditional Fruitcake is a classic holiday delight. Packed with a variety of mixed dried fruits, nuts, and warm spices, it's a dense and flavorful cake that is often soaked in brandy or rum for added richness. A festive and timeless treat.",
+          "price": "11$"
+        },
+        {
+          "id": "2",
+          "title": "Citrus Burst Summer Fruit Cake",
+          "img": "src/assets/images/cakes/fruit-cakes/TraditionalFruitcake.png",
+          "ingredients": "All-purpose Flour, Butter, Sugar, Eggs, Fresh Orange Zest, Mixed Summer Fruits (berries, peaches, citrus segments), Baking Powder, Vanilla Extract",
+          "description": "Celebrate the flavors of summer with the Citrus Burst Summer Fruit Cake. This light and moist cake feature a medley of fresh summer fruits, complemented by the zesty brightness of orange zest. A perfect dessert to enjoy during the warmer months.",
+          "price": "12$"
+        },
+        {
+          "id": "3",
+          "title": "Pineapple Coconut Upside-Down Cake",
+          "img": "src/assets/images/cakes/fruit-cakes/PineappleCoconutUpsideDownCake.png",
+          "ingredients": "Chocolate Cookie Crust, Cream Cheese, Sugar, Eggs, Vanilla Extract, Dark Chocolate, melted",
+          "description": "Delight in the artistic fusion of chocolate and cheesecake with the Chocolate Marble Cheesecake. With a chocolate cookie crust as the canvas, this dessert swirls rich, velvety chocolate through a classic cheesecake base. The result is a visually stunning and decadent treat that satisfies both chocolate and cheesecake cravings.",
+          "price": "18$"
+        }
+      ]
     }
   }
 }

@@ -1,3 +1,43 @@
 <div class="card">
   <p-tabMenu [scrollable]="true" [model]="items" [activeItem]="activeItem"></p-tabMenu>
 </div>
+
+<!--<div class="cards"></div>-->
+
+<!--<p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">-->
+<!--  <ng-template pTemplate="header">-->
+<!--    <img alt="Card" src="assets/images/food/pizza/MargaritaPizza.png" />-->
+<!--  </ng-template>-->
+<!--  <p>-->
+<!--    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque-->
+<!--    quas!-->
+<!--  </p>-->
+<!--  <ng-template pTemplate="footer">-->
+<!--    <p-button label="Save" icon="pi pi-check"></p-button>-->
+<!--    <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>-->
+<!--  </ng-template>-->
+<!--</p-card>-->
+
+
+<div class="container grid">
+      <div class="col-2">
+        <p-card [style]="{ width: '196px' }" subheader="Pepperoni  Pizza" class="p-holder">
+          <ng-template pTemplate="header">
+            <span class="pi pi-star"></span>
+            <img alt="Card" src="assets/images/food/pizza/MargaritaPizza.png"/>
+          </ng-template>
+          <span>
+            Pizza
+          </span>
+          <ng-template pTemplate="footer">
+            <p>price: 20$</p>
+            <p-button label="Add to card" icon="pi pi-shopping-cart"  ></p-button>
+          </ng-template>
+        </p-card>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+</div>

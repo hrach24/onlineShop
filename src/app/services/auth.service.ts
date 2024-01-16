@@ -17,5 +17,6 @@ export class AuthService {
     this.isAuth$.next(isAuth);
     this.userData$.next(newUser)
     localStorage.setItem('newUser', JSON.stringify(newUser))
+    localStorage.setItem('isAuth', JSON.stringify(isAuth))
   }
 }

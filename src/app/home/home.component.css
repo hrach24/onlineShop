@@ -3,6 +3,82 @@
   height: 50px;
 }
 
+.container{
+  width: 80%;
+  height: 20px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+:host ::ng-deep.p-card-body{
+  height: 129px;
+}
+
+:host ::ng-deep button{
+  width: auto;
+}
+
+:host ::ng-deep .p-card .p-card-body {
+  padding: 0.4rem;
+}
+
+:host ::ng-deep .p-card .p-card-content {
+  padding: 0.65rem 0;
+}
+
+:host ::ng-deep.p-card .p-card-footer {
+   padding: 0 0 0 0;
+}
+
+:host ::ng-deep.p-card.p-card .p-card-subtitle {
+  margin-bottom: 0.5rem;
+}
+
+:host ::ng-deep.p-card-header img {
+  max-height: 100%;
+}
+
+:host ::ng-deep .p-component:hover .p-card-body{
+  transform: translateY(-50px);
+}
+
+:host ::ng-deep .p-card-body{
+  transition-duration: 280ms;
+  background-color:white;
+}
+
+:host ::ng-deep .p-component:hover .p-card-footer button{
+  opacity: 1;
+  transition: opacity 300ms;
+  display: block;
+}
+
+:host ::ng-deep .p-card-footer button{
+  width: 100%;
+  height: 42px;
+  display: none;
+}
+
+:host ::ng-deep .p-card{
+  overflow: hidden;
+}
+
+:host ::ng-deep .p-card-footer button{
+  background-color: #f97316;
+  border-color: #f97316;
+}
+
+:host ::ng-deep .p-card-header .pi-star{
+  position: absolute;
+  color: yellow;
+  right: 7px;
+  top: 3px
+}
+
+:host ::ng-deep .p-card-header{
+  position: relative;
+}
+
 @media only screen and (max-width: 815px) {
   .card{
     margin-top: 50px;

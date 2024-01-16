@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-products',
@@ -8,9 +8,9 @@ import { Router } from "@angular/router";
 })
 export class ProductsComponent implements OnInit{
     public pageRoute: string;
-    constructor(private route: Router) {}
+    constructor(private router: Router, private route: ActivatedRoute) {}
 
     ngOnInit(): void{
-      this.pageRoute = this.route.url;
+      this.pageRoute = this.router.url;
     }
 }

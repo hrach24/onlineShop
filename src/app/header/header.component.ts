@@ -17,7 +17,6 @@ import { MenuItem, MessageService } from 'primeng/api';
 
 export class HeaderComponent implements OnInit, OnDestroy {
   public items: MenuItem[];
-  public searchValue: string | undefined;
   public countries: any = [
     { name: 'EN', code: 'EN', flag_path: 'assets/images/languages/en.png' },
     { name: 'RU', code: 'RU', flag_path: 'assets/images/languages/ru.png' },
@@ -176,9 +175,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public logOut(): void {
-    this.isAuth = null;
+    this.isAuth = false;
     this.messageService.add({ severity: 'error', summary: 'Successfully', detail: 'Logged Out !' });
     localStorage.removeItem('newUser');
+    localStorage.removeItem('isAuth');
   }
 
 }
