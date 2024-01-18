@@ -6,11 +6,21 @@ import { ActivatedRoute, Router } from "@angular/router";
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
-export class ProductsComponent implements OnInit{
-    public pageRoute: string;
-    constructor(private router: Router, private route: ActivatedRoute) {}
+export class ProductsComponent implements OnInit {
+  public pageRoute: string;
+  private params: string;
 
-    ngOnInit(): void{
-      this.pageRoute = this.router.url;
-    }
+  constructor(private router: Router, private route: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+    this.pageRoute = this.router.url;
+    this.route.params
+      .subscribe({
+        next: params => {
+          this.params = params.id;
+        }
+      })
+    console.log(this.pageRoute)
+  }
 }

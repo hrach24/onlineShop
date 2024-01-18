@@ -6,7 +6,7 @@ import { IUserInterface } from "../core/interfaces/user/user.interface";
 import { MessageService } from 'primeng/api';
 import { HttpClient } from "@angular/common/http";
 import { AuthService } from "../services/auth.service";
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-sign-up',
@@ -34,6 +34,7 @@ export class SignUpComponent implements OnInit {
     private messageService: MessageService,
     private http: HttpClient,
     private signUpUserService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -75,22 +76,27 @@ export class SignUpComponent implements OnInit {
       };
 
       this.http.get('http://localhost:3000/users')
-        .subscribe(res => {
-        this.getAllUsers = res;
-        let userAlreadyExist =  this.getAllUsers.find((user:IUserInterface) => user.email === this.signUpForm.value.email);
-        if (userAlreadyExist) {
-          this.emailAlreadyExist = true;
-          this.signUpForm.controls.email.markAsUntouched();
+        .subscribe({
+          next:(res) => {
+            this.getAllUsers = res;
+            let userAlreadyExist =  this.getAllUsers.find((user:IUserInterface) => user.email === this.signUpForm.value.email);
+            if (userAlreadyExist) {
+              this.emailAlreadyExist = true;
+              this.signUpForm.controls.email.markAsUntouched();
 
-        }else {
-          this.http.post('http://localhost:3000/users', newUser)
-            .subscribe(res => {
-            this.signUpUserService.settingTrueVal(true, newUser);
-            this.ref.close();
-            this.messageService.add({ severity: 'success', summary: 'Successfully Signed-up', detail: 'Congratulations !' });
+            }else {
+              this.http.post('http://localhost:3000/users', newUser)
+                .subscribe(res => {
+                  this.signUpUserService.settingTrueVal(true, newUser);
+                  this.ref.close();
+                  this.messageService.add({ severity: 'success', summary: 'Successfully Signed-up', detail: 'Congratulations !' });
+                })
 
-          })
-        }
+            }
+          },
+          error:(err) => {
+            this.router.navigate([ '/error' ]).then()
+          }
       })
     }
   }

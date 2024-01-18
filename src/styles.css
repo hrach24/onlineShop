@@ -6,17 +6,20 @@
 
 
 body, html {
-  height: 100%;
   margin: 0;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 
 app-footer {
   color: #fff;
+}
+
+app-root{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper{
+  flex: 1
 }

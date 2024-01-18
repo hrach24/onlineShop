@@ -1,0 +1,37 @@
+:host{
+  display:block;
+}
+
+.container {
+  margin: 0 auto;
+  width: 95%
+}
+
+.order-information {
+  height: 326px;
+  border: 1px solid black;
+}
+
+.gift-card{
+  height: 135px;
+  border: 1px solid black;
+  border-radius:16px;
+}
+
+.order-information{
+  margin-bottom: 24px;
+  border-radius:16px;
+}
+
+::ng-deep .wrapper{
+  background-color: #faf9f8;
+}
+
+.user-info{
+  border: 1px solid black;
+  display: flex;
+}
+
+.cart{
+  border: 1px solid black;
+}

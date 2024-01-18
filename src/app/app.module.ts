@@ -31,7 +31,11 @@ import { KeyFilterModule } from "primeng/keyfilter";
 import { HttpClientModule } from "@angular/common/http";
 import { MenuModule } from "primeng/menu";
 import { CardModule } from "primeng/card";
-
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { CartComponent } from './cart/cart.component';
+import { ListboxModule } from "primeng/listbox";
+import { InputGroupModule } from "primeng/inputgroup";
+import { InputGroupAddonModule } from "primeng/inputgroupaddon";
 
 @NgModule({
   declarations: [
@@ -44,6 +48,7 @@ import { CardModule } from "primeng/card";
     SignUpComponent,
     ErrorComponent,
     ProductsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +73,10 @@ import { CardModule } from "primeng/card";
     HttpClientModule,
     MenuModule,
     CardModule,
+    NgxSkeletonLoaderModule,
+    ListboxModule,
+    InputGroupModule,
+    InputGroupAddonModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

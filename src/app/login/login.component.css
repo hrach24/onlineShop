@@ -67,19 +67,9 @@ input {
   margin-top: 10px;
 }
 
-:host ::ng-deep .reg-input.ng-invalid.ng-touched .p-inputtext.p-inputmask {
-  border: 1px solid red
-}
-
 input {
-  &.ng-valid.ng-touched {
+  &.ng-valid {
     border: 1px solid #4CAF50;
-  }
-}
-
-input {
-  &.ng-valid.ng-untouched {
-    border: 1px solid red;
   }
 }
 

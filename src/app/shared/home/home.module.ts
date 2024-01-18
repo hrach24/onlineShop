@@ -4,6 +4,7 @@ import { HomeComponent } from "../../home/home.component";
 import { TabMenuModule } from "primeng/tabmenu";
 import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
+import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 
 @NgModule({
   declarations: [HomeComponent],
@@ -11,7 +12,8 @@ import { CardModule } from "primeng/card";
         TabMenuModule,
         ButtonModule,
         CardModule,
-        CommonModule
+        CommonModule,
+        NgxSkeletonLoaderModule
     ],
   exports: [
     HomeComponent,

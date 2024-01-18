@@ -37,7 +37,7 @@
             <span class="pi pi-heart-fill"></span>
           </div>
           <div class="user user-cart">
-            <span class="pi pi-shopping-cart"></span>
+            <a [routerLink]="['/cart']"><span class="pi pi-shopping-cart"></span></a>
           </div>
           <div class="user user-img">
             <span  class="card flex justify-content-center" (click)="menu.toggle($event)"><img src="/assets/images/userImg.jpg"></span>

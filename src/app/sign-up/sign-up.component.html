@@ -57,7 +57,7 @@
 
     <div class="col">
       <div class="txt-holder"><span class="form-pi pi pi-lock"></span>Password:</div>
-      <p-password [toggleMask]="true" class="reg-input" placeholder="Password" formControlName="password"></p-password>
+      <p-password [toggleMask]="true" [ngClass]="{'passwordMatchErrMessage': passwordsDontMatch}" class="reg-input" placeholder="Password" formControlName="password"></p-password>
 
       <ng-container *ngIf="signUpForm.controls.password.invalid && signUpForm.controls.password.touched">
         <div class="error">
@@ -68,8 +68,8 @@
       <div class="txt-holder"><span class="form-pi pi pi-lock"></span>Confirm Password:</div>
       <span class="p-input-icon-right">
       <i class="icon pi " [ngClass]="eyeShow ? 'pi-eye' : 'pi-eye-slash'" (click)="showHide()"></i>
-      <input pInputText class="reg-input" [type]="inputType" placeholder="Confirm Password"
-             formControlName="confirmPassword">
+      <input pInputText class="reg-input confirm-password" [type]="inputType" placeholder="Confirm Password"
+             formControlName="confirmPassword" [ngClass]="{'confirmPasswordMatchErrMessage': passwordsDontMatch}">
       </span>
 
       <ng-container  *ngIf="signUpForm.controls.confirmPassword.invalid && signUpForm.controls.confirmPassword.touched">

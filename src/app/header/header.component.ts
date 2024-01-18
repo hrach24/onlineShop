@@ -6,7 +6,7 @@ import { Subject, take, takeUntil } from "rxjs";
 import { AuthService } from "../services/auth.service";
 import { HttpClient } from "@angular/common/http";
 import { MenuItem, MessageService } from 'primeng/api';
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -34,13 +34,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public dialogService: DialogService,
     public authService: AuthService,
     public http: HttpClient,
-    private messageService: MessageService
-  ) {}
+    private messageService: MessageService,
+    private router: Router,
+  ) {
+
+  }
+
 
   ngOnInit(): void {
     this.localStorageValueChange();
     this.followAuthState();
     this.generateUserProfileItems();
+
   }
 
   ngOnDestroy(): void {
@@ -52,34 +57,39 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const userFromLocalStorage = JSON.parse(localStorage.getItem('newUser') || 'null');
     if (userFromLocalStorage) {
       this.http.get('http://localhost:3000/users')
-        .subscribe((usersFromServer) => {
-          this.users = usersFromServer;
-          let found = this.users.find((user: any) => {
-            if (
-              user.name === userFromLocalStorage.name &&
-              user.surname === userFromLocalStorage.surname &&
-              user.email === userFromLocalStorage.email &&
-              user.password === userFromLocalStorage.password &&
-              user.role === userFromLocalStorage.role
-            ){
-              return user
-            }
-          })
-          if (found) {
-            this.userName = userFromLocalStorage.name;
-            this.userSurname = userFromLocalStorage.surname;
-            if (this.items) {
-              this.items[0].label = `${this.userName} ${this.userSurname}`;
+        .subscribe({
+          next:(usersFromServer) => {
+            this.users = usersFromServer;
+            let found = this.users.find((user: any) => {
+              if (
+                user.name === userFromLocalStorage.name &&
+                user.surname === userFromLocalStorage.surname &&
+                user.email === userFromLocalStorage.email &&
+                user.password === userFromLocalStorage.password &&
+                user.role === userFromLocalStorage.role
+              ){
+                return user
+              }
+            })
+            if (found) {
+              this.userName = userFromLocalStorage.name;
+              this.userSurname = userFromLocalStorage.surname;
+              if (this.items) {
+                this.items[0].label = `${this.userName} ${this.userSurname}`;
 
-            }
-            this.isAuth = true;
-          }else {
+              }
+              this.isAuth = true;
+            }else {
               localStorage.clear();
 
+            }
+          },
+          error: (err) => {
+            this.router.navigate([ '/error' ]).then()
           }
         })
-    }
-    else {
+
+    }else {
       localStorage.clear();
 
     }
@@ -88,8 +98,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private followAuthState(): void {
     this.authService.isAuth$
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(data => {
-        this.isAuth = data;
+      .subscribe( {
+        next:(data) => {
+          this.isAuth = data;
+        },
+        error: (err) => {
+          this.router.navigate([ '/error' ]).then()
+        }
       })
   }
 
@@ -169,6 +184,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         next: res => {
           if (res) {
             this.loginShow();
+
           }
         }
       })
@@ -176,7 +192,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public logOut(): void {
     this.isAuth = false;
-    this.messageService.add({ severity: 'error', summary: 'Successfully', detail: 'Logged Out !' });
+    this.messageService.add({icon:'pi pi-sign-out', severity: 'error', summary: 'Successfully', detail: 'Logged Out !' });
     localStorage.removeItem('newUser');
     localStorage.removeItem('isAuth');
   }

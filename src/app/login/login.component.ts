@@ -6,6 +6,8 @@ import { HttpClient } from "@angular/common/http";
 import { AuthService } from "../services/auth.service";
 import { IUserInterface } from "../core/interfaces/user/user.interface";
 import { MessageService } from 'primeng/api';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-login',
@@ -27,6 +29,7 @@ export class LoginComponent implements OnInit{
     private http: HttpClient,
     public userService: AuthService,
     private messageService: MessageService,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -49,27 +52,32 @@ export class LoginComponent implements OnInit{
   public submit(): void{
     if (!this.loginForm.invalid) {
       this.http.get<IUserInterface[]>('http://localhost:3000/users')
-        .subscribe((res: IUserInterface[]) => {
-        this.getAllUsers = res;
-        let loggedInUser:IUserInterface | undefined = this.getAllUsers.find((user: any) =>  {
-          if (user.email === this.loginForm.value.email && user.password === this.loginForm.value.password){
-            return user
+        .subscribe({
+          next: (res: IUserInterface[]) => {
+            this.getAllUsers = res;
+            let loggedInUser:IUserInterface | undefined = this.getAllUsers.find((user: any) =>  {
+              if (user.email === this.loginForm.value.email && user.password === this.loginForm.value.password){
+                return user
 
+              }
+            });
+            if (loggedInUser){
+              this.userService.settingTrueVal(true, loggedInUser);
+              this.ref.close();
+              let firstLetterUpperCaseUserName = loggedInUser.name[0].toUpperCase() + loggedInUser.name.slice(1)
+              let firstLetterUpperCaseUserSurname = loggedInUser.surname[0].toUpperCase() + loggedInUser.surname.slice(1)
+              this.messageService.add({ severity: 'success', summary: 'Welcome Back !', detail:  firstLetterUpperCaseUserName +  " " + firstLetterUpperCaseUserSurname });
+
+            }else{
+              this.wrongEmailAndPassword = true;
+              this.loginForm.controls.email.markAsUntouched();
+              this.loginForm.controls.password.markAsUntouched();
+
+            }
+          },
+          error:(err) => {
+            this.router.navigate([ '/error' ]).then()
           }
-        });
-        if (loggedInUser){
-          this.userService.settingTrueVal(true, loggedInUser);
-          this.ref.close();
-          let firstLetterUpperCaseUserName = loggedInUser.name[0].toUpperCase() + loggedInUser.name.slice(1)
-          let firstLetterUpperCaseUserSurname = loggedInUser.surname[0].toUpperCase() + loggedInUser.surname.slice(1)
-          this.messageService.add({ severity: 'success', summary: 'Welcome Back !', detail:  firstLetterUpperCaseUserName +  " " + firstLetterUpperCaseUserSurname });
-
-        }else{
-          this.wrongEmailAndPassword = true;
-          this.loginForm.controls.email.markAsUntouched();
-          this.loginForm.controls.password.markAsUntouched();
-
-        }
       })
     }else {
       this.loginForm.markAllAsTouched();

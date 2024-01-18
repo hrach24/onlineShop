@@ -41,18 +41,6 @@
   width: 100%
 }
 
-input {
-  &.ng-invalid.ng-touched {
-    border: 1px solid red;
-  }
-}
-
-input {
-  &.ng-valid.ng-touched {
-    border: 1px solid #4CAF50;
-  }
-}
-
 :host ::ng-deep .p-inline-message .p-inline-message-text {
   font-size: 13px;
   font-weight: bold
@@ -74,26 +62,6 @@ input {
   padding: 3px;
 }
 
-:host ::ng-deep .reg-input.ng-invalid.ng-touched .p-inputtext.p-inputmask {
-  border: 1px solid red
-}
-
-:host ::ng-deep .p-element.ng-invalid.ng-touched .p-inputtext {
-  border: 1px solid red
-}
-
-:host ::ng-deep .p-button{
-  margin-left: 10px;
-}
-
-:host ::ng-deep .reg-input.ng-valid.ng-touched .p-inputtext.p-inputmask {
-  border: 1px solid #4CAF50;
-}
-
-:host ::ng-deep .p-element.ng-valid.ng-touched .p-inputtext {
-  border: 1px solid #4CAF50;
-}
-
 :host ::ng-deep .p-button {
   margin-left: 10px;
 }
@@ -106,16 +74,27 @@ input {
   width: 100%
 }
 
-:host ::ng-deep input {
-  &.dirty.ng-untouched {
+input {
+  &.ng-valid {
+    border: 1px solid #4CAF50;
+  }
+}
+
+input {
+  &.ng-invalid.ng-touched {
     border: 1px solid red;
   }
 }
 
-:host ::ng-deep .p-inputtext.ng-dirty.ng-untouched {
+:host ::ng-deep .p-element.ng-valid.ng-touched .p-inputtext {
+  border: 1px solid #4CAF50;
+}
+
+
+:host ::ng-deep .passwordMatchErrMessage .p-inputtext {
   border: 1px solid red;
 }
 
-:host ::ng-deep .p-element.ng-dirty.ng-untouched .p-password input {
-  border: 1px solid red;
+.confirmPasswordMatchErrMessage{
+  border: 1px solid red ! important;
 }
