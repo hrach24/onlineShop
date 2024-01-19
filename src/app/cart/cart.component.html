@@ -7,13 +7,80 @@
       <h3>Order</h3>
       <div class="user-info col-10">
         <div class="cart col-9">
+          <div class="card flex">
+            <div class="line">
+              <div>
+                <label class="order-txt phone-number-txt">Phone Number</label>
+              </div>
+
+                <p-dropdown [options]="countries" [dropdownIcon]="icon"  [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="false" (onChange)="getCountry()" class="country-dropdown">
+                  <ng-template pTemplate="selectedItem">
+                    <div class="flex align-items-center gap-2 country-dropdown" *ngIf="selectedCountry">
+                      <img src="{{selectedCountry.img}}" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" style="width: 18px"/>
+                      <div>{{ selectedCountry.name }}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-country pTemplate="item">
+                    <div class="flex align-items-center gap-2">
+                      <img src="{{country.img}}" [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px"/>
+                      <div>{{country.name}}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+
+              <p-inputMask [mask]="pInputMask" [placeholder]="selectedCountry.code" (onFocus)="false"></p-inputMask>
+            </div>
+            <div class="date-container">
+              <div class="order-txt">Date</div>
+              <div class="date">
+                <p-calendar [(ngModel)]="date" [iconDisplay]="'input'" [showIcon]="true" [showButtonBar]="true">
+                  <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+                    <i class="pi pi-calendar-minus" (click)="clickCallBack($event)"></i>
+                  </ng-template>
+                </p-calendar>
+              </div>
+            </div>
+            <div class="hour-container">
+              <div class="order-txt ">Date Hour</div>
+              <p-dropdown [options]="cities" optionLabel="name" [placeholder]="currentTime" [(ngModel)]="currentTime" class="date-hour"></p-dropdown>
+            </div>
+          </div>
+        </div>
+        <div class="cart col-3">
+          <div class="first flex">
+            <div class="user-info-container enter">
+              <label class="order-txt">Enter</label>
+              <input type="text" name="" class="user-info-inp">
+            </div>
+            <div class="user-info-container floor">
+              <label class="order-txt">Floor</label>
+              <input type="text" name="" class="user-info-inp">
+            </div>
+          </div>
+
+
 
         </div>
-        <div class="cart col-3"></div>
       </div>
-
+      <div class="col-8 comment">
+        <div class="card p-fluid">
+          <div><label class="order-txt">Description</label></div>
+          <div class="comment-input">
+            <p-chips></p-chips>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="gift-card col-10"></div>
+    <div class="gift-card col-10">
+      <h2>Gift Card And Promo Code</h2>
+      <div class="code-container">
+        <div>
+          <label class="order-txt">Ente the code</label>
+        </div>
+        <p-autoComplete class="enter-the-code-inp"></p-autoComplete>
+        <p-button label="Submit"></p-button>
+      </div>
+    </div>
   </div>
 
 </div>

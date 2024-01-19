@@ -15,7 +15,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AutoCompleteModule} from "primeng/autocomplete";
+import { AutoCompleteModule } from "primeng/autocomplete";
 import { ErrorComponent } from './error/error.component';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { DropdownModule } from 'primeng/dropdown';
@@ -32,10 +32,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { MenuModule } from "primeng/menu";
 import { CardModule } from "primeng/card";
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { CartComponent } from './cart/cart.component';
 import { ListboxModule } from "primeng/listbox";
 import { InputGroupModule } from "primeng/inputgroup";
 import { InputGroupAddonModule } from "primeng/inputgroupaddon";
+import { CartComponent } from "./cart/cart.component";
+import { CalendarModule } from "primeng/calendar";
+import { ChipsModule } from 'primeng/chips';
+
 
 @NgModule({
   declarations: [
@@ -77,6 +80,8 @@ import { InputGroupAddonModule } from "primeng/inputgroupaddon";
     ListboxModule,
     InputGroupModule,
     InputGroupAddonModule,
+    CalendarModule,
+    ChipsModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

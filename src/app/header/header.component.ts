@@ -60,7 +60,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         .subscribe({
           next:(usersFromServer) => {
             this.users = usersFromServer;
-            let found = this.users.find((user: any) => {
+            let foundNumber = this.users.find((user: any) => {
               if (
                 user.name === userFromLocalStorage.name &&
                 user.surname === userFromLocalStorage.surname &&
@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
                 return user
               }
             })
-            if (found) {
+            if (foundNumber) {
               this.userName = userFromLocalStorage.name;
               this.userSurname = userFromLocalStorage.surname;
               if (this.items) {

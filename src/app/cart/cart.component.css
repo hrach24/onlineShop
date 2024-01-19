@@ -1,5 +1,13 @@
-:host{
-  display:block;
+:focus-visible{
+  outline: none;
+}
+
+.card{
+  justify-content: space-between;
+}
+
+h3{
+  margin-left: 15px;
 }
 
 .container {
@@ -9,13 +17,14 @@
 
 .order-information {
   height: 326px;
-  border: 1px solid black;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .gift-card{
-  height: 135px;
-  border: 1px solid black;
+  height: 200px;
   border-radius:16px;
+  background-color: white;
 }
 
 .order-information{
@@ -28,10 +37,154 @@
 }
 
 .user-info{
-  border: 1px solid black;
   display: flex;
 }
 
-.cart{
-  border: 1px solid black;
+:host ::ng-deep .country-dropdown{
+  background-color: #faf9f8;
+  width: 83px;
+  border: none;
+}
+
+:host ::ng-deep .p-element.p-inputmask{
+  background-color: white;
+  border: none;
+}
+
+.line{
+  border-bottom: 1px solid black
+}
+
+:host ::ng-deep  .p-inputtext:enabled:focus{
+  box-shadow: none;
+}
+
+:host ::ng-deep  .p-inputwrapper-focus{
+  box-shadow: none;
+}
+
+:host ::ng-deep.order-txt{
+  font-size: 15px;
+  padding-top: 5px;
+  color: #847e7b;
+}
+
+:host ::ng-deep.date-container{
+  border-bottom: 1px solid black;
+}
+
+:host ::ng-deep.p-calendar input {
+  border:none;
+  background-color: white;
+  padding-left: 0;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+:host ::ng-deep .p-calendar{
+  width: 145px;
+}
+
+.hour-container{
+  border-bottom: 1px solid black;
+}
+
+:host ::ng-deep .country-dropdown .p-inputwrapper{
+  width: 83px;
+  border: none;
+}
+
+:host ::ng-deep .date-hour .p-inputwrapper{
+  border: none;
+  background-color: white;
+}
+
+:host ::ng-deep .p-inputmask{
+  font-weight: 700;
+  color: black;
+}
+
+:host ::ng-deep .pi-calendar-minus{
+  margin-top: -6px;
+  color: black
+}
+
+:host ::ng-deep .p-dropdown-label .p-inputtext{
+  font-weight: 700;
+  color: black;
+}
+
+:host ::ng-deep .date-hour .p-dropdown {
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+:host ::ng-deep .date-hour .p-dropdown span{
+  color: black
+}
+
+.comment{
+  padding-top: 23px;
+}
+
+:host ::ng-deep.p-chips.p-component ul{
+  border: none;
+  background-color: white
+}
+
+:host ::ng-deep.p-chips.p-component ul:focus-visible{
+  border: none;
+}
+
+:host ::ng-deep .p-chips-multiple-container:focus{
+  border: none ! important;
+}
+
+.comment-input{
+  width: 93%;
+  border-bottom: 1px solid black
+}
+
+.user-info-container {
+  width: 103px;
+  height: 70px;
+  border-bottom: 1px solid black
+
+}
+
+.first{
+  justify-content: space-evenly;
+  height: 72px;
+}
+
+.second{
+  justify-content: space-evenly;
+}
+
+.user-info-inp{
+  margin-top: 27px;
+  width: 102px;
+  border: none
+}
+
+:host ::ng-deep .enter-the-code-inp div input{
+  border: none;
+}
+
+:host ::ng-deep .enter-the-code-inp div{
+  border-bottom: 1px solid black
+}
+
+:host ::ng-deep .p-button.p-component{
+  background-color: white;
+  border-color: white;
+  margin-left: 15px;
+  color: #847e7b;
+  position: relative;
+  top: 16px;
+}
+
+.gift-card{
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
