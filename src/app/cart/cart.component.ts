@@ -18,10 +18,11 @@ export class CartComponent implements OnInit{
   public defaultCountryCode: string;
   public pInputMask: string;
   public selectedCountry: any
-  public currentTime: any;
-  public date: Date | undefined;
+  public date: Date;
   public cities: any;
-  public icon: string
+  public icon: string;
+  public foundMinute: number | undefined;
+  public currentTime: string;
   constructor() {}
 
   ngOnInit(): void {
@@ -34,55 +35,37 @@ export class CartComponent implements OnInit{
     ];
     this.selectedCountry = this.countries[0];
     this.cities = [];
-    let getMinutes: number = new Date().getMinutes();
-    let minutes: any = new Date().getMinutes().toString();
-    let hour: number = new Date().getHours();
-    let singleHourNumber: number = new Date().getHours() % 12 || 12;
-    let arr: any[] = [0,15,30,45];
     this.date = new Date();
-    if (minutes < 10){
-      getMinutes = 0;
-    }
 
     if (this.date.getMinutes() < 10){
-      this.currentTime = this.date.getHours() + ':' + '0'+ this.date.getMinutes();
+      this.currentTime = this.date.getHours() + ':' + '0' + this.date.getMinutes();
 
     }else{
       this.currentTime = this.date.getHours() + ':' + this.date.getMinutes();
 
     }
-
-    let allMinutesInLastHour: number = 46; //12*60/15
-    let minutesInCurrentHour: number = singleHourNumber * 60 / 15;
-    let minutesCountForLoop: number = allMinutesInLastHour - minutesInCurrentHour;
-
-    let foundNumber: any= arr.find((number)=>  number > getMinutes)
-    console.log(foundNumber)
-    let result: number = foundNumber - getMinutes;
-    let dateHourDropDownMinutes:number = getMinutes + result;
-    if (foundNumber === undefined){
-      dateHourDropDownMinutes = 0;
-      let c = { name: String(hour) + ':' + String('00') };
-      this.cities.push(c);
+    let array: any[] = [0,15,30,45];
+    let currentMinute:number = this.date.getMinutes();
+    let currentHour:number = this.date.getHours();
+    this.foundMinute = array.find(minute => minute > currentMinute);
+    let singleHourNumber: number = new Date().getHours() % 12 || 12;
+    if(this.foundMinute === undefined){
+      this.foundMinute = 0;
 
     }
+    let minutesCountInSingleHourNumber: number = (singleHourNumber * 60 + this.foundMinute) / 15;
+    let loopCount: number = 46 - minutesCountInSingleHourNumber;
 
-
-    for (let i = 0; i < minutesCountForLoop; i++) {
-      console.log(dateHourDropDownMinutes)
-      if (dateHourDropDownMinutes === 60){
-        hour = hour + 1;
-        dateHourDropDownMinutes = 0;
-        let f = { name: String(hour) + ':' + String('00') }
-        this.cities.push(f);
-
-      }else{
-        // console.log(dateHourDropDownMinutes)
-        let dateHourDropDownToShow = { name: String(hour) + ':' + String(dateHourDropDownMinutes) }
-        this.cities.push(dateHourDropDownToShow);
+    for(let i = 0; i < loopCount; i++){
+      this.foundMinute = this.foundMinute + 15
+      if(this.foundMinute === 60 ){
+        this.foundMinute = 0;
+        currentHour = currentHour + 1;
 
       }
-      dateHourDropDownMinutes = dateHourDropDownMinutes + 15;
+      let dateToShowInDropDown = { name: String(currentHour) + ':' + String(this.foundMinute) };
+      this.cities.push(dateToShowInDropDown);
+
     }
   }
 
@@ -90,4 +73,5 @@ export class CartComponent implements OnInit{
     this.defaultCountryCode = this.selectedCountry.code;
     this.pInputMask = `(${this.selectedCountry.code}) ` + this.selectedCountry.mask
   }
+
 }
