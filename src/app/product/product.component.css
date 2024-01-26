@@ -1,0 +1,303 @@
+img {
+  max-width: 100%;
+  height: 548px;
+  border-radius: 16px;
+}
+
+.product-container {
+  margin-top: 8px;
+}
+
+.line {
+  border: 1px solid grey
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  max-width: 330px;
+}
+
+.description {
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.comment-input {
+  width: 100%;
+  border: none
+}
+
+.input-holder {
+  border-bottom: 1px solid black
+}
+
+:host ::ng-deep .p-element.p-inputwrapper div {
+  width: 100%
+}
+
+:host ::ng-deep.p-chips.p-component ul {
+  width: 100%;
+  border: none
+}
+
+:host ::ng-deep.p-chips.p-component ul:focus-visible {
+  border: 1px solid red
+}
+
+:host ::ng-deep .p-chips:not(.p-disabled).p-focus .p-chips-multiple-container {
+  box-shadow: none;
+}
+
+.user-action {
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+}
+
+.user-action-content {
+  height: 43%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.heart-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f4f3f3;
+}
+
+.plus p-button button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+:host ::ng-deep .counter .p-element {
+  width: 24px;
+  height: 24px
+}
+
+.minus {
+  height: 24px
+}
+
+.number span {
+  width: 32px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus p-button button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.product-add-counter-buttons {
+  display: flex;
+  padding-left: 35px;
+  align-items: flex-end;
+}
+
+.add-to-cart {
+  height: 32px;
+}
+
+.number {
+  height: 39px;
+}
+
+.add-to-cart {
+  margin-left: 15px;
+}
+
+::ng-deep .p-dialog .p-dialog-header {
+  padding: 0;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+:host ::ng-deep .p-element {
+  width: 218px;
+  height: 40px
+}
+
+.plus.counter {
+  height: 24px;
+}
+
+.product-content {
+  height: 295px
+}
+
+::ng-deep .p-dialog.p-dynamic-dialog {
+  width: 1120px;
+  height: 626px;
+}
+
+.for-media {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-header {
+  display:flex;
+  justify-content: space-between;
+}
+
+.mobile-heart{
+  font-size: 24px;
+  color: lightgrey;
+}
+
+.reply-icon {
+  font-weight: bolder;
+  font-size: 19px;
+  color: lightgray;
+}
+
+.reply-icon:hover {
+  color: #b71e4e;
+  cursor: pointer;
+}
+
+.show{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+::ng-deep .p-confirm-popup{
+  width: 320px;
+}
+
+.icon-as-img img{
+  width: 40px;
+  height: 40px;
+}
+
+.icon-as-img img:hover{
+  cursor: pointer;
+}
+
+.images-holder{
+  display: flex;
+  justify-content: space-between;
+  width: 288px;
+}
+
+::ng-deep .p-overlaypanel{
+  border-radius: 16px;
+  width: 320px;
+}
+
+.shareProductLink .link {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.shareProductLink{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  height: 29px
+}
+
+.copy{
+  font-size: 25px;
+}
+
+.copy:hover{
+  cursor: pointer;
+}
+
+.make-border-color-green {
+  border-color: #00c9ad;
+}
+
+.check{
+  color: #00c9ad;
+}
+
+.reply-icon{
+  display: none;
+}
+
+.mobile-heart{
+  display: none;
+}
+
+@media only screen and (max-width: 1260px) {
+  ::ng-deep .p-dialog-header-icons{
+    background-color: whitesmoke;
+    border-radius: 50%;
+  }
+
+  .reply-icon{
+    display: block;
+  }
+
+  .mobile-heart{
+    display: block;
+  }
+
+  ::ng-deep .p-dialog-mask{
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  ::ng-deep .p-dialog-mask .p-dialog.p-dynamic-dialog{
+    width: 100%
+  }
+
+  ::ng-deep .product-container{
+    display: flow
+  }
+
+  ::ng-deep .product-container div img{
+    height: 188px
+  }
+
+  ::ng-deep .p-dialog.p-dynamic-dialog {
+    height: 628px;
+  }
+
+  ::ng-deep .img-holder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ::ng-deep .product-info {
+    width: 100%;
+  }
+
+  ::ng-deep .heart-holder.counter {
+    display: none;
+  }
+
+  :host ::ng-deep .user-action {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  :host ::ng-deep .product-add-counter-buttons{
+    padding: 0;
+  }
+
+}

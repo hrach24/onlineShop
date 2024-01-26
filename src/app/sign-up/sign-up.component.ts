@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ISignUpForm } from "../core/interfaces/sign-up.interface";
 import { DynamicDialogRef } from "primeng/dynamicdialog";
-import { IUserInterface } from "../core/interfaces/user/user.interface";
+import { IUserInterface } from "../core/interfaces/user.interface";
 import { MessageService } from 'primeng/api';
 import { HttpClient } from "@angular/common/http";
 import { AuthService } from "../services/auth.service";
@@ -70,11 +70,6 @@ export class SignUpComponent implements OnInit {
 
     } else {
       this.passwordsDontMatch = false;
-      let newUser: IUserInterface = {
-        ...this.signUpForm.getRawValue(),
-        role: '1'
-      };
-
       this.http.get('http://localhost:3000/users')
         .subscribe({
           next:(res) => {
@@ -85,6 +80,10 @@ export class SignUpComponent implements OnInit {
               this.signUpForm.controls.email.markAsUntouched();
 
             }else {
+              let newUser: IUserInterface = {
+                ...this.signUpForm.getRawValue(),
+                role: '0'
+              };
               this.http.post('http://localhost:3000/users', newUser)
                 .subscribe(res => {
                   this.signUpUserService.settingTrueVal(true, newUser);

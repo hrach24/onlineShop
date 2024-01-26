@@ -38,6 +38,9 @@ import { InputGroupAddonModule } from "primeng/inputgroupaddon";
 import { CartComponent } from "./cart/cart.component";
 import { CalendarModule } from "primeng/calendar";
 import { ChipsModule } from 'primeng/chips';
+import { ProductComponent } from './product/product.component';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { OverlayPanelModule } from "primeng/overlaypanel";
 
 
 @NgModule({
@@ -52,6 +55,7 @@ import { ChipsModule } from 'primeng/chips';
     ErrorComponent,
     ProductsComponent,
     CartComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +85,9 @@ import { ChipsModule } from 'primeng/chips';
     InputGroupModule,
     InputGroupAddonModule,
     CalendarModule,
-    ChipsModule
+    ChipsModule,
+    ConfirmPopupModule,
+    OverlayPanelModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

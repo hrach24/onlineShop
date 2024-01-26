@@ -7,6 +7,14 @@ import { AuthService } from "../services/auth.service";
 import { HttpClient } from "@angular/common/http";
 import { MenuItem, MessageService } from 'primeng/api';
 import { Router } from "@angular/router";
+import { IUserInterface } from "../core/interfaces/user.interface";
+// import { UserService } from "../services/user.service";
+
+
+interface Price {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-header',
@@ -16,6 +24,7 @@ import { Router } from "@angular/router";
 })
 
 export class HeaderComponent implements OnInit, OnDestroy {
+  price: Price[];
   public items: MenuItem[];
   public countries: any = [
     { name: 'EN', code: 'EN', flag_path: 'assets/images/languages/en.png' },
@@ -23,12 +32,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     { name: 'FA', code: 'FA', flag_path: 'assets/images/languages/fa.png' } ];
   public selectedCountry: any = this.countries[0];
   public ref: DynamicDialogRef;
-  public isAuth: any;
-  public users: any;
+  public isAuth: boolean;
+  public users: any
   public userName: string;
   public userSurname: string;
   private unsubscribe$: Subject<void> = new Subject<void>();
-
 
   constructor(
     public dialogService: DialogService,
@@ -36,16 +44,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public http: HttpClient,
     private messageService: MessageService,
     private router: Router,
-  ) {
-
-  }
+    // private userService: UserService
+  ) {}
 
 
   ngOnInit(): void {
-    this.localStorageValueChange();
+    this.checkUserFromLocalStorage();
     this.followAuthState();
     this.generateUserProfileItems();
-
+    this.price = [
+      { name: 'AMD', code: 'AMD' },
+    ];
   }
 
   ngOnDestroy(): void {
@@ -53,14 +62,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  public localStorageValueChange(): void {
+  public checkUserFromLocalStorage(): void {
     const userFromLocalStorage = JSON.parse(localStorage.getItem('newUser') || 'null');
     if (userFromLocalStorage) {
+      this.userName = userFromLocalStorage.name;
+      this.userSurname = userFromLocalStorage.surname;
       this.http.get('http://localhost:3000/users')
         .subscribe({
           next:(usersFromServer) => {
             this.users = usersFromServer;
-            let foundNumber = this.users.find((user: any) => {
+            let foundUser = this.users.find((user: any) => {
               if (
                 user.name === userFromLocalStorage.name &&
                 user.surname === userFromLocalStorage.surname &&
@@ -71,9 +82,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
                 return user
               }
             })
-            if (foundNumber) {
-              this.userName = userFromLocalStorage.name;
-              this.userSurname = userFromLocalStorage.surname;
+            if (foundUser) {
               if (this.items) {
                 this.items[0].label = `${this.userName} ${this.userSurname}`;
 
@@ -106,6 +115,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
           this.router.navigate([ '/error' ]).then()
         }
       })
+    this.authService.userData$.subscribe({
+      next:(userInfo: IUserInterface) => {
+        this.userName = userInfo.name;
+        this.userSurname = userInfo.surname;
+        this.items[0].label = `${this.userName} ${this.userSurname}`;
+    }
+    })
   }
 
   private generateUserProfileItems(): void {
@@ -157,7 +173,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public loginShow(): void {
     this.ref = this.dialogService.open(LoginComponent, {
-      header: 'Log In',
       modal: true,
     });
     this.ref.onClose
@@ -191,10 +206,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public logOut(): void {
+    localStorage.clear();
     this.isAuth = false;
     this.messageService.add({icon:'pi pi-sign-out', severity: 'error', summary: 'Successfully', detail: 'Logged Out !' });
-    localStorage.removeItem('newUser');
-    localStorage.removeItem('isAuth');
   }
 
+  public logInPopUpShowAndButtonClick(event: any, element: any): void {
+    this.popUpLoginButtonClick();
+    element.hide(event);
+    this.loginShow();
+  }
+
+  public registerPopUpShowAndButtonClick(event: any, element: any): void {
+    element.hide(event);
+    this.signUpShow();
+  }
+
+  public popUpLoginButtonClick() :void{
+
+  }
 }

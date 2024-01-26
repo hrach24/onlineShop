@@ -137,7 +137,7 @@ h3{
 }
 
 :host ::ng-deep .p-chips-multiple-container:focus{
-  border: none ! important;
+  border: none;
 }
 
 .comment-input{
@@ -187,4 +187,41 @@ h3{
 .gift-card{
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.cart-content{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.shopping-cart{
+  font-size: 24px;
+  color: rgb(246, 181, 34);
+}
+
+.cart-container{
+  height:auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cart-txt{
+  color: grey;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+
+.product-adding-txt{
+  color: #847e7b;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 16px;
 }

@@ -42,7 +42,6 @@
             </div>
             <div class="hour-container">
               <div class="order-txt ">Date Hour</div>
-<!--              <p-dropdown [options]="cities" optionLabel="name" [placeholder]="currentTime" [(ngModel)]="currentTime" class="date-hour"></p-dropdown>-->
               <p-dropdown [options]="cities" optionLabel="name" [placeholder]="currentTime" [(ngModel)]="currentTime" class="date-hour"></p-dropdown>
             </div>
           </div>
@@ -81,6 +80,19 @@
         <p-autoComplete class="enter-the-code-inp"></p-autoComplete>
         <p-button label="Submit"></p-button>
       </div>
+    </div>
+  </div>
+
+
+  <div class="col-2 cart-container">
+    <div class="cart-content">
+      <div class="content">
+        <p class="pi pi-shopping-cart shopping-cart"></p>
+        <p class="cart-txt">Your Cart Is Empty.</p>
+        <p class="product-adding-txt">For adding a product please press &lt;&lt;Add&gt;&gt; Button</p>
+      </div>
+    </div>
+    <div class="cart-content">
     </div>
   </div>
 

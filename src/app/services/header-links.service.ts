@@ -9,13 +9,13 @@ export class HeaderLinksService {
 
   constructor() {
     this.items = [
-      {label: 'Food', routerLink: '/food'},
-      {label: 'Cakes', routerLink: '/cakes'},
-      {label: 'Drinks', routerLink: '/drinks'},
+      { label: 'Food', routerLink: '/food' },
+      { label: 'Cakes', routerLink: '/cakes' },
+      { label: 'Drinks', routerLink: '/drinks' },
     ];
   }
 
-  getMenuItems(){
+  public getMenuItems() {
     return this.items
   }
 

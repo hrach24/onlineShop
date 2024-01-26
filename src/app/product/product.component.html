@@ -1,0 +1,80 @@
+<div class="grid container product-container" *ngIf="getProductsService.foundProduct$ | async as product">
+  <div class="col-7 img-holder">
+    <img src="{{product.img}}" alt="">
+  </div>
+  <div class="col-5 product-info">
+    <div class="product-content">
+      <div class="mobile-header">
+        <div class="for-media">
+          <h1>{{product.title}}</h1>
+          <div class="share">
+            <span class="pi pi-reply reply-icon" (click)="op.toggle($event)"></span>
+            <p-overlayPanel #op>
+              <div class="share-txt">
+                <h3>Share</h3>
+              </div>
+              <div class="images-holder">
+                <div class="icon-as-img fb">
+                  <img src="https://buy.am/socials/fb.svg" alt="" class="">
+                </div>
+                <div class="icon-as-img pinterest">
+                  <img src="https://buy.am/socials/pinterest.svg" alt="">
+                </div>
+                <div class="icon-as-img instagram">
+                  <img src="https://buy.am/socials/whats-app.svg" alt="">
+                </div>
+                <div class="icon-as-img telegram">
+                  <img src="https://buy.am/socials/tg.svg" alt="">
+                </div>
+                <div class="icon-as-img gmail">
+                  <img src="https://buy.am/socials/gmail.svg" alt="">
+                </div>
+              </div>
+              <div class="shareProductLink" [ngClass]="{'make-border-color-green': makeBorderColorToGreen}">
+                <span class="link">https://www.this/Is/The/Link/You/Can/Copy</span>
+                <span class="pi" [ngClass]="{'pi-copy': !makeBorderColorToGreen, 'pi-check check': makeBorderColorToGreen}" (click)="copyContent()"></span>
+              </div>
+            </p-overlayPanel>
+          </div>
+        </div>
+
+        <div class="mobile-heart-r">
+          <span class="pi pi-heart mobile-heart"></span>
+        </div>
+
+      </div>
+      <div class="line"></div>
+      <p class="description">{{product.description}}</p>
+      <div class="line"></div>
+
+      <p>Comment</p>
+      <div class="input-holder">
+        <p-chips></p-chips>
+      </div>
+    </div>
+    <div class="user-action-content col">
+      <div class="user-action">
+        <div class="heart-holder counter">
+          <p-button icon="pi pi-heart" [rounded]="true" severity="secondary" [outlined]="true"></p-button>
+        </div>
+        <div class="product-add-counter-buttons counter">
+          <div class="minus">
+            <p-button icon="pi pi-minus" severity="secondary" [rounded]="true" [outlined]="true"
+                      (onClick)="productMinus()" class="counter"></p-button>
+          </div>
+          <div class="number">
+            <span>{{productCount}}</span>
+          </div>
+          <div class="plus counter">
+            <p-button icon="pi pi-plus" [rounded]="true" severity="secondary" [outlined]="true" (onClick)="productAdd()"
+                      class="counter"></p-button>
+          </div>
+        </div>
+        <div class="add-to-cart">
+          <p-button icon="pi pi-shopping-cart" label="Add to Cart {{productPrice + '$'}}" [rounded]="true"
+                    severity="danger"></p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

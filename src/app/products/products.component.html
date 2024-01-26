@@ -1,1 +1,69 @@
+<div class="content grid product-container" *ngIf="!isLoading; else skeleton">
+  <div class="products container grid"  *ngFor="let item of mainCategoryProducts | keyvalue">
 
+
+    <div class="grid">
+      <div class="col-12 category-txt">
+        <h2>{{item.key}}</h2>
+      </div>
+      <div class="mr-4 col-2 w-12rem" *ngFor="let product of item.value" >
+
+        <p-card [style]="{ width: '196px' }" subheader="{{product.title}}" class="p-holder" title="{{product.title}}" (click)="showProduct(product.id)">
+          <ng-template pTemplate="header">
+            <span class="pi pi-star"></span>
+            <img alt="Card" src="{{product.img}}"/>
+
+          </ng-template>
+          <span>
+            {{item.key}}
+        </span>
+
+          <ng-template pTemplate="footer">
+            <p>price: {{product.price}}</p>
+            <p-button label="Add to card" icon="pi pi-shopping-cart"  ></p-button>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #skeleton>
+  <div class="content grid skeleton">
+    <div class="col-12">
+      <div class="grid">
+        <div class="skeleton-title-loader col-1">
+          <ngx-skeleton-loader count="1" appearance="line" animation="progress" [theme]="{'height': '50px', 'width': '196px'}"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="grid flex">
+      <div class="mr-4 col-2 w-12rem posts" *ngFor="let n of skeletonView(6)">
+        <ngx-skeleton-loader count="1" appearance="line" animation="progress" [theme]="{'height': '160px', 'width': '196px'}"></ngx-skeleton-loader>
+        <ngx-skeleton-loader count="2" appearance="line" animation="progress" [theme]="{'height': '80px', 'width': '196px'}"></ngx-skeleton-loader>
+      </div>
+    </div>
+
+
+    <div class="col-12">
+      <div class="grid">
+        <div class="skeleton-title-loader col-1">
+          <ngx-skeleton-loader count="1" appearance="line" animation="progress" [theme]="{'height': '50px', 'width': '196px'}"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="grid flex">
+      <div class="mr-4 col-2 w-12rem posts" *ngFor="let n of skeletonView(6)">
+        <ngx-skeleton-loader count="1" appearance="line" animation="progress" [theme]="{'height': '160px', 'width': '196px'}"></ngx-skeleton-loader>
+        <ngx-skeleton-loader count="2" appearance="line" animation="progress" [theme]="{'height': '80px', 'width': '196px'}"></ngx-skeleton-loader>
+      </div>
+    </div>
+  </div>
+
+
+</ng-template>

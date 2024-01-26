@@ -9,6 +9,8 @@ export interface IUserInterface {
 }
 
 export interface IUserLoginInterFace {
+  name: string | undefined,
+  surname: string | undefined,
   email: string | undefined,
-  phoneNumber: string | undefined,
+  password: string | undefined,
 }

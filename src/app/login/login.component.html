@@ -1,39 +1,112 @@
-<div class="container">
-  <form (ngSubmit)="submit()" [formGroup]="loginForm">
-    <span class="pi pi-user"></span>
-    <input type="text" pInputText placeholder="Email" class="form-input email-input" formControlName="email"/>
-
-    <ng-container  *ngIf="loginForm.controls.email.touched">
-      <div class="error">
-        <p-message *ngIf="loginForm.controls.email.errors?.['required']" severity="error" text="Please Fill The Email"></p-message>
-      </div>
-    </ng-container>
-    <ng-container  *ngIf="loginForm.controls.email.hasError('pattern')">
-      <div class="error">
-        <p-message severity="error" text="Email Is Not Correct"></p-message>
-      </div>
-    </ng-container>
-
-    <div class="content">
-      <span class="pi pi-lock"></span>
-      <i class="eye icon pi " [ngClass]="eyeShow ? 'pi-eye' : 'pi-eye-slash'" (click)="showHide()"></i>
-      <input pInputText type="text" class="form-input reg-input" placeholder="Password" [type]="inputType" formControlName="password">
+<div class="container-holder">
+  <div class="login-pop-up-container">
+    <div class="image-and-welcome-container">
+      <img src="assets/images/shop-logo/shop-logo.jpg" alt="" class="shop-logo">
+      <div class="welcome-txt">Welcome to YummyShop.am</div>
+<!--      <span *ngIf="userEmail"><i class="pi pi-user"></i>{{userEmail}}</span>-->
+      <div *ngIf="userEmail"><i class="pi pi-user user-icon-after-continue-button"></i>{{userEmail}}</div>
     </div>
+    <div class="login-form-container">
+      <form (ngSubmit)="submit()" [formGroup]="loginForm">
+        <div class="mail-and-phone-number-container">
+          <span class="mail-and-phone-number-txt" *ngIf="!emailSucceed">Enter your email or phone number</span>
+          <div class="for-underline-border">
+            <p-inputGroup *ngIf="!emailSucceed; else emailSucceedInput">
+              <p-inputGroupAddon>
+                <i class="pi pi-user"></i>
+              </p-inputGroupAddon>
+              <input pInputText class="user-email" (click)="makeBorderNotVisible()" [ngClass]="{'border-none': makeInputBorderNotVisiable}" formControlName="email"/>
+            </p-inputGroup>
 
-    <ng-container *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
-      <div class="error">
-        <p-message severity="error" text="Please Fill The Email"></p-message>
-      </div>
-    </ng-container>
-    <ng-container *ngIf="wrongEmailAndPassword">
-      <div class="error">
-        <p-message severity="error" text="Please Fill The Correct Email and Password"></p-message>
-      </div>
-    </ng-container>
+            <ng-template #emailSucceedInput>
+              <span class="mail-and-phone-number-txt">Enter your Password</span>
+              <p-inputGroup>
+                <p-inputGroupAddon>
+                  <i class="pi pi-lock"></i>
+                </p-inputGroupAddon>
+                <p-password id="toggle" [toggleMask]="true" formControlName="password"/>
+              </p-inputGroup>
+            </ng-template>
 
-    <a class="dont-have-account-txt" (click)="openSignUpPopUp()">Don't have an account ? </a>
-    <div class="submit-container">
-      <p-button label="Log In" [raised]="true" class="logIn_btn" type="submit"></p-button>
+          </div>
+          <ng-container  *ngIf="loginForm.controls.email.touched">
+            <div class="error">
+              <p-message *ngIf="loginForm.controls.email.errors?.['required']" severity="error" text="Please Fill The Email"></p-message>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="loginForm.controls.email.hasError('pattern')">
+            <div class="not-correct-email">
+              <p-message severity="error" text="Email Is Not Correct"></p-message>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+            <div class="error">
+              <p-message severity="error" text="Please Fill The Password"></p-message>
+            </div>
+          </ng-container>
+        </div>
+
+        <div class="continue-button-and-social-medias">
+          <p-button *ngIf="!emailSucceed" label="Continue" [rounded]="true" [disabled]="loginForm.controls.email.invalid" [ngClass]="{'input-is-valid': !loginForm.controls.email.invalid}" (onClick)="continueButtonClick()" severity="secondary" class="continue-button">
+            <i class="pi pi-arrow-right right-icon" [ngClass]="{'icon-color-change': !loginForm.controls.email.invalid}"></i>
+          </p-button>
+          <p-button *ngIf="emailSucceed" label="Log-in" [rounded]="true" [disabled]="loginForm.controls.email.invalid" [ngClass]="{'input-is-valid': !loginForm.controls.email.invalid}" (onClick)="logInButtonClick()" severity="secondary" class="continue-button">
+            <i class="pi pi-arrow-right right-icon" [ngClass]="{'icon-color-change': !loginForm.controls.email.invalid}"></i>
+          </p-button>
+          <div class="login-by-social-medias">
+            <p class="login-by-social-medias-text">Or log-In by social medias</p>
+            <div class="social-medias">
+              <div class="google-container">
+                <img src="assets/images/social-medias/google.png" alt="">
+                <span class="google-txt">Continue with Google</span>
+                <i class="pi pi-arrow-right"></i>
+              </div>
+              <div class="facebook-container">
+                <img src="assets/images/social-medias/facebook.png" alt="">
+                <span class="google-txt">Continue with Facebook</span>
+                <i class="pi pi-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
+<!--  <form (ngSubmit)="submit()" [formGroup]="loginForm">-->
+<!--    <span class="pi pi-user"></span>-->
+<!--    <input type="text" pInputText placeholder="Email" class="form-input email-input" formControlName="email"/>-->
+
+<!--    <ng-container  *ngIf="loginForm.controls.email.touched">-->
+<!--      <div class="error">-->
+<!--        <p-message *ngIf="loginForm.controls.email.errors?.['required']" severity="error" text="Please Fill The Email"></p-message>-->
+<!--      </div>-->
+<!--    </ng-container>-->
+<!--    <ng-container  *ngIf="loginForm.controls.email.hasError('pattern')">-->
+<!--      <div class="error">-->
+<!--        <p-message severity="error" text="Email Is Not Correct"></p-message>-->
+<!--      </div>-->
+<!--    </ng-container>-->
+
+<!--    <div class="content">-->
+<!--      <span class="pi pi-lock"></span>-->
+<!--      <i class="eye icon pi " [ngClass]="eyeShow ? 'pi-eye' : 'pi-eye-slash'" (click)="showHide()"></i>-->
+<!--      <input pInputText type="text" class="form-input reg-input" placeholder="Password" [type]="inputType" formControlName="password">-->
+<!--    </div>-->
+
+<!--    <ng-container *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">-->
+<!--      <div class="error">-->
+<!--        <p-message severity="error" text="Please Fill The Email"></p-message>-->
+<!--      </div>-->
+<!--    </ng-container>-->
+<!--    <ng-container *ngIf="wrongEmailAndPassword">-->
+<!--      <div class="error">-->
+<!--        <p-message severity="error" text="Please Fill The Correct Email and Password"></p-message>-->
+<!--      </div>-->
+<!--    </ng-container>-->
+
+<!--    <a class="dont-have-account-txt" (click)="openSignUpPopUp()">Don't have an account ? </a>-->
+<!--    <div class="submit-container">-->
+<!--      <p-button label="Log In" [raised]="true" class="logIn_btn" type="submit"></p-button>-->
+<!--    </div>-->
+<!--  </form>-->
 </div>

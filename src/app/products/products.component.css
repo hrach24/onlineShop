@@ -1,0 +1,155 @@
+
+.container{
+  width: 92%;
+  height: auto;
+  margin: 0 auto;
+}
+
+:host ::ng-deep.p-card-body{
+  height: 129px;
+}
+
+:host ::ng-deep button{
+  width: auto;
+}
+
+:host ::ng-deep .p-card .p-card-body {
+  padding: 0.4rem;
+}
+
+:host ::ng-deep .p-card .p-card-content {
+  padding: 0.65rem 0;
+}
+
+:host ::ng-deep.p-card .p-card-footer {
+  padding: 0 0 0 0;
+}
+
+:host ::ng-deep.p-card.p-card .p-card-subtitle {
+  margin-bottom: 0.5rem;
+}
+
+:host ::ng-deep.p-card-header img {
+  max-height: 100%;
+}
+
+:host ::ng-deep .p-component:hover .p-card-body {
+  transform: translateY(-50px);
+}
+
+:host ::ng-deep .p-component:hover {
+  cursor: pointer;
+}
+
+:host ::ng-deep .p-card-body{
+  transition-duration: 280ms;
+  background-color:white;
+}
+
+:host ::ng-deep .p-component:hover .p-card-footer button{
+  opacity: 1;
+  transition: opacity 300ms;
+  display: block;
+}
+
+:host ::ng-deep .p-card-footer button{
+  width: 100%;
+  height: 42px;
+  display: none;
+}
+
+:host ::ng-deep .p-card{
+  overflow: hidden;
+}
+
+:host ::ng-deep .p-card-footer button{
+  background-color: #f97316;
+  border-color: #f97316;
+}
+
+:host ::ng-deep .p-card-header .pi-star{
+  position: absolute;
+  color: yellow;
+  right: 7px;
+  top: 3px;
+}
+
+:host ::ng-deep .pi-star:hover{
+  font-size: 18px;
+  cursor: pointer;
+}
+
+:host ::ng-deep .p-card-header{
+  position: relative;
+}
+
+.content{
+  width: 80%;
+  margin: 0 auto;
+}
+
+:host ::ng-deep.skeleton-loader{
+  margin-bottom: -1px ! important;
+}
+
+h2{
+  letter-spacing: 2px;
+  text-transform: capitalize;
+
+}
+
+:host ::ng-deep .p-holder img{
+  height: 189px;
+}
+
+:host ::ng-deep .p-card-subtitle:hover{
+  text-decoration: underline;
+}
+
+:host ::ng-deep.p-card-subtitle{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+:host ::ng-deep .p-card.p-component {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.center .posts{
+  width: 14%
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+.products{
+  display:flex;
+  justify-content: flex-start;
+}
+
+@media only screen and (max-width: 1581px) {
+  .container {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 815px) {
+  .card{
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 1260px) {
+  .product-container{
+    width: 87%
+  }
+}
+
+@media only screen and (max-width: 815px) {
+  .products {
+    padding-top: 45px;
+  }
+}

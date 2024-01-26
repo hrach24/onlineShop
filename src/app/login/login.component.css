@@ -1,3 +1,245 @@
+.container-holder{
+  width: 100%
+}
+
+.login-pop-up-container{
+  display: flex;
+  flex-direction: column;
+}
+
+::ng-deep .p-dialog {
+  width: 476px;
+  min-height: 576px;
+}
+
+::ng-deep.p-dialog-header{
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  padding: 0.5rem
+}
+
+.shop-logo{
+  width: 80px;
+  height: 56px;
+}
+
+.welcome-txt{
+  margin-top: 20px;
+  color: black;
+  font-size: 17px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.user-icon-after-continue-button {
+  margin-right: 6px;
+}
+
+.image-and-welcome-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 137px;
+}
+
+::ng-deep .p-dialog-content app-login{
+  width: 100%
+}
+
+.mail-and-phone-number-txt {
+  font-weight: 400;
+  letter-spacing: 0.00938em;
+  font-size: 13px;
+}
+
+:host ::ng-deep .p-chips{
+  display: flex;
+}
+
+:host ::ng-deep .p-chips .p-chips-multiple-container{
+  width: 100%;
+  border: 1px solid white;
+}
+
+.for-underline-border{
+  border-bottom: 1px solid grey;
+}
+
+::ng-deep.p-focus .p-chips-multiple-container{
+  box-shadow: none;
+}
+
+:host ::ng-deep .p-inputgroup-addon{
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  background-color: white
+}
+
+.mail-and-phone-number-container{
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  height: 68px;
+}
+
+.user-email {
+  border: none;
+  width: 100%;
+}
+
+.border-none {
+  box-shadow: none;
+}
+
+.for-underline-border:hover {
+  border-bottom: 2px solid #b71e4e;
+}
+
+:host ::ng-deep .continue-button button {
+  width: 100%;
+  height: 52px;
+  background-color: #d7d6d5;
+  border-color: #d7d6d5;
+  flex-direction: row-reverse;
+}
+
+.continue-button-and-social-medias {
+  margin: 24px 0;
+}
+
+.right-icon {
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  color: #d7d6d5;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-medias {
+  align-items: center;
+  width: 100%;
+  height: 66px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.login-by-social-medias-text {
+  padding-top: 8px;
+  margin-bottom: 16px;
+  color: #847e7b;
+  font-family: Montserrat arm,sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.social-medias div {
+  width: 202px;
+  height: 66px;
+  border-radius: 8px;
+  border: 1px solid #ececeb;
+}
+
+.login-by-social-medias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.google-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.google-container:hover {
+  cursor: pointer
+}
+
+.google-txt {
+  font-size: 13px;
+  font-weight: 600;
+  width: 88px;
+}
+
+.social-medias div i {
+  color: #d7d6d5
+}
+
+.facebook-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.facebook-container:hover {
+  cursor: pointer
+}
+
+:host ::ng-deep .input-is-valid button {
+  background: linear-gradient(45deg,#b71e4e,#f20062);
+}
+
+.icon-color-change{
+  color: #b71e4e;
+}
+
+:host ::ng-deep .p-password.p-component {
+  width: 100%;
+  border: none
+}
+
+:host ::ng-deep .p-component.p-element {
+  box-shadow: none;
+  border: 1px solid white;
+}
+
+:host ::ng-deep .p-inline-message-error {
+  height: 29px;
+}
+
+.error {
+  margin-top: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .login-form{
   width: 400px;
   height: 400px;
@@ -36,11 +278,6 @@
   cursor: pointer;
 }
 
-.error {
-  width: 239px;
-  margin: 0 auto;
-  margin-top: 4px;
-}
 
 :host ::ng-deep .p-inline-message-text{
   font-size: 14px;
