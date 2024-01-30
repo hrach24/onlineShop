@@ -161,6 +161,9 @@
   border: none;
   border-bottom: 1px solid #bbb9b9;
   margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 145px;
 }
 
 .price-change-and-line:hover {
@@ -224,9 +227,47 @@
 /*}*/
 
 .user-img {
-  border-radius: 50%
+  border-radius: 50%;
+  height: 43px;
 }
 
+.user-dropdown-links {
+  height: 410px;
+}
+
+.user-dropdown-links ul {
+  padding: 0;
+  margin: 0;
+}
+
+.user-links {
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.li-hover :hover{
+  background-color: #f8f0f6;
+}
+
+.user-links a {
+  color: black;
+  text-decoration: none;
+}
+
+.user-links img {
+  margin-right: 15px;
+  width: 32px;
+  height: 32px;
+}
+
+/*::ng-deep .p-overlaypanel-content {*/
+/*  padding: 0*/
+/*}*/
 
 /*.heart {*/
 /*  width: 40px;*/
@@ -244,7 +285,32 @@
   border-radius: 50%;
 }
 
-/*:host ::ng-deep .pi-heart-fill {*/
+.loggedIn-price-change-and-line {
+  border-bottom: 1px solid #bbb9b9;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 145px;
+  justify-content: end;
+}
+
+.loggedIn-price-change-and-line :hover {
+
+}
+
+::ng-deep .userOverlay .p-overlaypanel-content {
+  padding:  0;
+}
+
+::ng-deep .p-dropdown-label.p-inputtext {
+  font-weight: 600;
+}
+
+::ng-deep .p-dropdown {
+  border: none;
+}
+
+  /*:host ::ng-deep .pi-heart-fill {*/
 /*  font-size: 33px;*/
 /*  color: #f97316;*/
 /*}*/
@@ -263,6 +329,7 @@
   display: flex;
   margin-right: 10px;
 }
+
 .label{
   font-size: 11.5px;
   margin-left: 7px;

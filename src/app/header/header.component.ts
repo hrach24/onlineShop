@@ -8,7 +8,6 @@ import { HttpClient } from "@angular/common/http";
 import { MenuItem, MessageService } from 'primeng/api';
 import { Router } from "@angular/router";
 import { IUserInterface } from "../core/interfaces/user.interface";
-// import { UserService } from "../services/user.service";
 
 
 interface Price {
@@ -44,7 +43,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public http: HttpClient,
     private messageService: MessageService,
     private router: Router,
-    // private userService: UserService
   ) {}
 
 
@@ -55,6 +53,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.price = [
       { name: 'AMD', code: 'AMD' },
     ];
+
   }
 
   ngOnDestroy(): void {
@@ -110,18 +109,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe( {
         next:(data) => {
           this.isAuth = data;
-        },
+          },
         error: (err) => {
           this.router.navigate([ '/error' ]).then()
         }
       })
-    this.authService.userData$.subscribe({
-      next:(userInfo: IUserInterface) => {
-        this.userName = userInfo.name;
-        this.userSurname = userInfo.surname;
-        this.items[0].label = `${this.userName} ${this.userSurname}`;
-    }
-    })
   }
 
   private generateUserProfileItems(): void {
@@ -130,39 +122,39 @@ export class HeaderComponent implements OnInit, OnDestroy {
         items: [
           {
             label: 'Yummy Shop.am Wallet',
-            icon: 'pi pi-wallet',
+            icon: 'assets/images/shop-logo/shop-logo.jpg',
             command: () => {
             },
             routerLink: 'hey'
           },
           {
             label: 'Gift Cards',
-            icon: 'pi pi-gift',
-            command: () => {
+            icon: 'assets/images/header/gift-card.png',
+            clickEvent: () => {
             }
           },
           {
             label: 'My Addresses',
-            icon: 'pi pi-times',
-            command: () => {
+            icon: 'assets/images/header/location.png',
+            clickEvent: () => {
             }
           },
           {
             label: 'Personal Information',
-            icon: 'pi pi-user',
-            command: () => {
+            icon: 'assets/images/header/grey-user.png',
+            clickEvent: () => {
             }
           },
           {
             label: 'Orders History',
-            icon: 'pi pi-history',
-            command: () => {
+            icon: 'assets/images/header/history.png',
+            clickEvent: () => {
             }
           },
           {
             label: 'Log Out',
-            icon: 'pi pi-sign-out',
-            command: (): void => {
+            icon: 'assets/images/header/exit.png',
+            clickEvent: (): void => {
               this.logOut();
             }
           }
@@ -190,7 +182,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public signUpShow(): void {
     this.ref = this.dialogService.open(SignUpComponent, {
       header: 'Sign-Up',
-      width: '50%',
+      width: '716px',
+      height: 'auto',
       modal: true,
     })
     this.ref.onClose

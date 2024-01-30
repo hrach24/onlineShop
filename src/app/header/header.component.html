@@ -14,9 +14,9 @@
   </div>
 
   <div class="user-func" *ngIf="!isAuth; else loggedInBlock">
-      <div class="icon car">
-        <img src="assets/images/header/car.png" alt="">
-      </div>
+    <div class="icon car">
+      <img src="assets/images/header/car.png" alt="">
+    </div>
 
     <div class="icon heart">
       <span class="pi pi-heart-fill"></span>
@@ -53,7 +53,7 @@
                 </ng-template>
                 <ng-template let-country pTemplate="item">
                   <div class="selected_flag">
-<!--                    <img src="{{country.flag_path}}" [class]="'flag flag-' + country.code.toLowerCase()" style="height: 18px"/>-->
+                    <!--                    <img src="{{country.flag_path}}" [class]="'flag flag-' + country.code.toLowerCase()" style="height: 18px"/>-->
                     <span [class]="'flag_' + country.code.toLowerCase()">{{country.name}}</span>
                   </div>
                 </ng-template>
@@ -74,101 +74,95 @@
   <ng-template #loggedInBlock>
     <div class="loggedInContent">
       <div class="content">
-        <div class="user heart">
+        <div class="icon car">
+          <img src="assets/images/header/car.png" alt="">
+        </div>
+        <div class="icon heart">
           <span class="pi pi-heart-fill"></span>
         </div>
-        <div class="user user-cart">
-          <a [routerLink]="['/cart']"><span class="pi pi-shopping-cart"></span></a>
-        </div>
-        <div class="user user-img">
-          <span  class="card flex justify-content-center" (click)="menu.toggle($event)"><img src="/assets/images/userImg.jpg"></span>
-          <p-menu #menu [model]="items" [popup]="true" class="dropdown">
-            <ng-template pTemplate="item" let-item>
-              <a  [attr.tabindex]="-1" class="p-menuitem-link flex justify-content-between align-items-center p-3" [routerLink]="item.routerLink">
-                <div class="user-dropdown">
-                  <span [class]="item.icon"></span>
-                  <span> {{ item.label }}</span>
-                </div>
-              </a>
-            </ng-template>
-          </p-menu>
+        <div class="icon cart">
+          <img src="assets/images/header/cart.png" alt="">
         </div>
 
-        <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name">
-          <ng-template pTemplate="selectedItem">
-            <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
-              <img src="{{selectedCountry.flag_path}}" />
-              <span class="country-code">{{selectedCountry.name}}</span>
+
+
+
+
+
+        <div class="user user-img">
+          <span  class="card flex justify-content-center" (click)="userProfileDropDown.toggle($event)"><img src="/assets/images/userImg.jpg"></span>
+          <p-overlayPanel styleClass="userOverlay" #userProfileDropDown [style]="{'left':'1200px', 'width':'360px', 'height': '505px', 'padding': '0'}" class="overlayPanellll">
+            <div class="user-dropdown">
+              <div class="user-dropdown-links">
+                  <ul>
+                    <div class="li-hover" *ngFor="let item of items[0].items" (click)="item.clickEvent()">
+                      <li  class="user-links">
+                        <img src="{{item.icon}}" alt="">
+                        <a>{{item.label}}</a>
+                      </li>
+                    </div>
+
+                  </ul>
+              </div>
+              <div class="language-and-price-change">
+                <div class="language-change-line">
+                  <label class="label">Languages</label>
+                  <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name">
+                    <ng-template pTemplate="selectedItem">
+                      <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+                        <span class="country-code">{{selectedCountry.name}}</span>
+                      </div>
+                    </ng-template>
+                    <ng-template let-country pTemplate="item">
+                      <div class="selected_flag">
+                        <!--                    <img src="{{country.flag_path}}" [class]="'flag flag-' + country.code.toLowerCase()" style="height: 18px"/>-->
+                        <span [class]="'flag_' + country.code.toLowerCase()">{{country.name}}</span>
+                      </div>
+                    </ng-template>
+                  </p-dropdown>
+                </div>
+
+                <div class="loggedIn-price-change-and-line">
+                  <label class="label">Price</label>
+                  <p-dropdown [options]="price" optionLabel="name" placeholder="Select a City"></p-dropdown>
+                </div>
+              </div>
             </div>
-          </ng-template>
-          <ng-template let-country pTemplate="item">
-            <div class="selected_flag">
-              <img src="{{country.flag_path}}" [class]="'flag flag-' + country.code.toLowerCase()" style="height: 18px"/>
-              <span [class]="'flag_' + country.code.toLowerCase()">{{country.name}}</span>
-            </div>
-          </ng-template>
-        </p-dropdown>
+          </p-overlayPanel>
+
+
+
+
+
+<!--          <p-menu #menu [model]="items" [popup]="true" class="dropdown">-->
+<!--            <ng-template pTemplate="item" let-item>-->
+<!--              <a  [attr.tabindex]="-1" class="p-menuitem-link flex justify-content-between align-items-center p-3" [routerLink]="item.routerLink">-->
+<!--                <div class="user-dropdown">-->
+<!--                  <span [class]="item.icon"></span>-->
+<!--                  <span> {{ item.label }}</span>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </ng-template>-->
+<!--          </p-menu>-->
+        </div>
+
+
+
+<!--        <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name">-->
+<!--          <ng-template pTemplate="selectedItem">-->
+<!--            <div class="flex align-items-center gap-2" *ngIf="selectedCountry">-->
+<!--              <img src="{{selectedCountry.flag_path}}" />-->
+<!--              <span class="country-code">{{selectedCountry.name}}</span>-->
+<!--            </div>-->
+<!--          </ng-template>-->
+<!--          <ng-template let-country pTemplate="item">-->
+<!--            <div class="selected_flag">-->
+<!--              <img src="{{country.flag_path}}" [class]="'flag flag-' + country.code.toLowerCase()" style="height: 18px"/>-->
+<!--              <span [class]="'flag_' + country.code.toLowerCase()">{{country.name}}</span>-->
+<!--            </div>-->
+<!--          </ng-template>-->
+<!--        </p-dropdown>-->
       </div>
     </div>
   </ng-template>
-<!--  <div class="log-sign-btn" *ngIf="!isAuth; else loggedInBlock">-->
-<!--    <p-button label="Log-In" class="log-in" severity="warning" (click)="loginShow()"></p-button>-->
-<!--    <p-button label="Sign-Up" class="log-in" severity="success" (click)="signUpShow()"></p-button>-->
-
-<!--    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name">-->
-<!--      <ng-template pTemplate="selectedItem">-->
-<!--        <div class="flex align-items-center gap-2" *ngIf="selectedCountry">-->
-<!--            <img src="{{selectedCountry.flag_path}}" />-->
-<!--            <span class="country-code">{{selectedCountry.name}}</span>-->
-<!--        </div>-->
-<!--      </ng-template>-->
-<!--      <ng-template let-country pTemplate="item">-->
-<!--          <div class="selected_flag">-->
-<!--            <img src="{{country.flag_path}}" [class]="'flag flag-' + country.code.toLowerCase()" style="height: 18px"/>-->
-<!--            <span [class]="'flag_' + country.code.toLowerCase()">{{country.name}}</span>-->
-<!--          </div>-->
-<!--      </ng-template>-->
-<!--    </p-dropdown>-->
-<!--  </div>-->
-
-<!--  <ng-template #loggedInBlock>-->
-<!--    <div class="loggedInContent">-->
-<!--        <div class="content">-->
-<!--          <div class="user heart">-->
-<!--            <span class="pi pi-heart-fill"></span>-->
-<!--          </div>-->
-<!--          <div class="user user-cart">-->
-<!--            <a [routerLink]="['/cart']"><span class="pi pi-shopping-cart"></span></a>-->
-<!--          </div>-->
-<!--          <div class="user user-img">-->
-<!--            <span  class="card flex justify-content-center" (click)="menu.toggle($event)"><img src="/assets/images/userImg.jpg"></span>-->
-<!--            <p-menu #menu [model]="items" [popup]="true" class="dropdown">-->
-<!--              <ng-template pTemplate="item" let-item>-->
-<!--                <a  [attr.tabindex]="-1" class="p-menuitem-link flex justify-content-between align-items-center p-3" [routerLink]="item.routerLink">-->
-<!--                  <div class="user-dropdown">-->
-<!--                    <span [class]="item.icon"></span>-->
-<!--                    <span> {{ item.label }}</span>-->
-<!--                  </div>-->
-<!--                </a>-->
-<!--              </ng-template>-->
-<!--            </p-menu>-->
-<!--          </div>-->
-
-<!--          <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name">-->
-<!--            <ng-template pTemplate="selectedItem">-->
-<!--              <div class="flex align-items-center gap-2" *ngIf="selectedCountry">-->
-<!--                <img src="{{selectedCountry.flag_path}}" />-->
-<!--                <span class="country-code">{{selectedCountry.name}}</span>-->
-<!--              </div>-->
-<!--            </ng-template>-->
-<!--            <ng-template let-country pTemplate="item">-->
-<!--              <div class="selected_flag">-->
-<!--                <img src="{{country.flag_path}}" [class]="'flag flag-' + country.code.toLowerCase()" style="height: 18px"/>-->
-<!--                <span [class]="'flag_' + country.code.toLowerCase()">{{country.name}}</span>-->
-<!--              </div>-->
-<!--            </ng-template>-->
-<!--          </p-dropdown>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--  </ng-template>-->
 </div>

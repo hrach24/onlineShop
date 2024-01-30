@@ -661,6 +661,16 @@
       "password": "789789",
       "confirmPassword": "789789",
       "role": "0"
+    },
+    {
+      "id": "ead3",
+      "name": "Hrach",
+      "surname": "Muradyan",
+      "email": "hrachmuradyan2003@gmail.com",
+      "phoneNumber": "(+1) 999 999-9999",
+      "password": "Hrach2003",
+      "confirmPassword": "Hrach2003",
+      "role": "0"
     }
   ],
   "products": {

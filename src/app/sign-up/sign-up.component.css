@@ -1,100 +1,413 @@
-.confirmation-button {
-  margin-top: 19px;
-  padding-bottom: 13px;
+::ng-deep .p-dialog .p-dialog-header {
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+::ng-deep .p-dialog .p-dialog-content {
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  overflow: hidden;
 }
 
-.question {
-  margin-top: 16px;
-  margin-left: 15px;
-  text-decoration: underline;
-  color: #3B82F6;
+.registration-form {
+  width: 668px;
+  height: auto;
 }
 
-.question:hover{
-  cursor: pointer;
-  font-size: 17px;
+.social-accounts {
+  width: 668px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.col input {
-  width: 100%
+.submit-and-cancel-buttons {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 32px;
+  justify-content: space-between;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user-info-second-part {
+  width: 308px;
+  height: 204px;
+}
+
+:host ::ng-deep .country-dropdown{
+  background-color: #faf9f8;
+  width: 83px;
+  border: none;
+}
+
+:host ::ng-deep .country-dropdown .p-inputwrapper{
+  width: 83px;
+  border: none;
+}
+
+:host ::ng-deep .p-element.p-inputmask{
+  background-color: white;
+  border: none;
+  font-weight: 700;
+  color: black;
+  width: 180px;
+}
+
+:host ::ng-deep  .p-inputtext:enabled:focus{
+  box-shadow: none;
+}
+
+:host ::ng-deep  .p-inputwrapper-focus{
+  box-shadow: none;
+}
+
+.phone-number-container{
+  display: flex;
+  border-bottom: 1px solid #ececeb;
+  width: 100%;
+}
+
+input {
+  border: none;
+}
+
+.underline {
+  border-bottom: 1px solid #ececeb;
+  width: 280px;
+}
+
+.underline-surname {
+  border-bottom: 1px solid #ececeb;
+  width: 100%;
+}
+
+:host ::ng-deep .p-password.p-component .p-inputtext {
+  border: none;
+}
+
+:host ::ng-deep .p-password.p-component {
+  border-bottom: 1px solid #ececeb;
+}
+
+.password-holder {
+  border-bottom: 1px solid #ececeb;
+}
+
+.password-container-for-icon {
+  border-bottom: 1px solid #ececeb;
+}
+
+.confirm-password-container-for-icon {
+  border-bottom: 1px solid #ececeb;
+  width: 100%;
 }
 
 .txt-holder {
-  margin-bottom: 10px;
+  font-size: 15px;
+  color: grey;
 }
 
-.reg-input {
-  margin-bottom: 10px;
-  width: 100%;
+.confirm-password {
+  width: 87%;
 }
 
-:host ::ng-deep .p-input-icon-right {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-:host ::ng-deep .p-password-input {
-  width: 100%
-}
-
-:host ::ng-deep .p-inputmask {
-  width: 100%
-}
-
-:host ::ng-deep .p-inline-message .p-inline-message-text {
-  font-size: 13px;
-  font-weight: bold
-}
-
-:host ::ng-deep .p-inline-message-error {
-  width: 100%
-}
-
-.error {
-  margin-bottom: 3px;
-}
-
-.phone-number-error {
+.join-txt {
+  width:100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
   margin-top: 6px;
 }
 
-.form-pi {
-  padding: 3px;
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background-color: #ffd576;
 }
 
-:host ::ng-deep .p-button {
-  margin-left: 10px;
-}
-
-.input-num {
-  width: 100%
-}
-
-:host ::ng-deep .p-inputnumber{
-  width: 100%
-}
-
-input {
-  &.ng-valid {
-    border: 1px solid #4CAF50;
-  }
-}
-
-input {
-  &.ng-invalid.ng-touched {
-    border: 1px solid red;
-  }
-}
-
-:host ::ng-deep .p-element.ng-valid.ng-touched .p-inputtext {
-  border: 1px solid #4CAF50;
+::ng-deep .p-inputswitch.p-focus .p-inputswitch-slider {
+  box-shadow: none;
 }
 
 
-:host ::ng-deep .passwordMatchErrMessage .p-inputtext {
-  border: 1px solid red;
+.google-container{
+  width: 322px;
+  height: 66px;
+  border: 1px solid #ececeb;
+  border-radius: 8px;
+  display: flex;
 }
 
-.confirmPasswordMatchErrMessage{
-  border: 1px solid red ! important;
+.facebook-container{
+  width: 322px;
+  height: 66px;
+  border: 1px solid #ececeb;
+  border-radius: 8px;
+  display: flex;
 }
+
+.google-txt {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.google-img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.facebook-img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.facebook-txt {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.google-facebook-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orSignUp {
+  padding-top: 8px;
+  margin-bottom: 16px;
+  font-family: Montserrat arm,sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+::ng-deep .p-element .p-button-warning {
+  width: 196px;
+  height: 52px;
+  border-radius: 26px;
+  background-color: #f4f3f3;
+  border-color: #f4f3f3;
+  color: #b71e4e;
+  box-shadow: 0 12px 16px -12px rgba(203,52,115,.3)
+}
+
+::ng-deep .p-element .p-button-success {
+  width: 196px;
+  height: 52px;
+  border-radius: 26px;
+  background: linear-gradient(45deg,#b71e4e,#f20062);
+  border: none;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+::ng-deep .p-element .p-button-success:focus {
+  box-shadow: none;
+}
+
+::ng-deep .p-element .p-button-success:focus-visible {
+  box-shadow: none;
+}
+
+.cancel-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.confirm-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.right-icon {
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  color: #b71e4e;
+  font-weight: bold;
+}
+
+.google-img i {
+  color: #ececeb;
+}
+
+.facebook-img i {
+  color: #ececeb;
+}
+
+.error {
+  margin-top: 10px;
+}
+
+.company-name-and-number-container {
+  width: 100%;
+  height: 57px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-number {
+  border-bottom: 1px solid #ececeb;
+  display: flex;
+  flex-direction: column;
+  width: 304px;
+}
+
+.company-number-input {
+  height: 20px;
+}
+
+.company-name {
+  display: flex;
+  flex-direction: column;
+  width: 304px;
+  border-bottom: 1px solid #ececeb;
+}
+
+.company-name-txt {
+  line-height: 1.4375em;
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.00938em;
+}
+
+.company-name-txt span {
+  font-size: 12px;
+}
+
+.company-name-input-and-icon {
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+}
+
+::ng-deep .company-name-input-and-icon input {
+  height: 24px;
+}
+
+
+
+
+
+
+
+
+
+/*.confirmation-button {*/
+/*  margin-top: 19px;*/
+/*  padding-bottom: 13px;*/
+/*}*/
+
+/*.question {*/
+/*  margin-top: 16px;*/
+/*  margin-left: 15px;*/
+/*  text-decoration: underline;*/
+/*  color: #3B82F6;*/
+/*}*/
+
+/*.question:hover{*/
+/*  cursor: pointer;*/
+/*  font-size: 17px;*/
+/*}*/
+
+/*.col input {*/
+/*  width: 100%*/
+/*}*/
+
+
+
+/*.reg-input {*/
+/*  margin-bottom: 10px;*/
+/*  width: 100%;*/
+/*}*/
+
+/*:host ::ng-deep .p-input-icon-right {*/
+/*  width: 100%;*/
+/*  margin-bottom: 10px;*/
+/*}*/
+
+/*:host ::ng-deep .p-password-input {*/
+/*  width: 100%*/
+/*}*/
+
+/*:host ::ng-deep .p-inputmask {*/
+/*  width: 100%*/
+/*}*/
+
+/*:host ::ng-deep .p-inline-message .p-inline-message-text {*/
+/*  font-size: 13px;*/
+/*  font-weight: bold*/
+/*}*/
+
+/*:host ::ng-deep .p-inline-message-error {*/
+/*  width: 100%*/
+/*}*/
+
+/*.error {*/
+/*  margin-bottom: 30px;*/
+/*}*/
+
+/*.phone-number-error {*/
+/*  margin-top: 6px;*/
+/*}*/
+
+/*.form-pi {*/
+/*  padding: 3px;*/
+/*}*/
+
+/*:host ::ng-deep .p-button {*/
+/*  margin-left: 10px;*/
+/*}*/
+
+/*.input-num {*/
+/*  width: 100%*/
+/*}*/
+
+/*:host ::ng-deep .p-inputnumber{*/
+/*  width: 100%*/
+/*}*/
+
+/*input {*/
+/*  &.ng-valid {*/
+/*    border: 1px solid #4CAF50;*/
+/*  }*/
+/*}*/
+
+/*input {*/
+/*  &.ng-invalid.ng-touched {*/
+/*    border: 1px solid red;*/
+/*  }*/
+/*}*/
+
+/*:host ::ng-deep .p-element.ng-valid.ng-touched .p-inputtext {*/
+/*  border: 1px solid #4CAF50;*/
+/*}*/
+
+
+/*:host ::ng-deep .passwordMatchErrMessage .p-inputtext {*/
+/*  border: 1px solid red;*/
+/*}*/
+
+/*.confirmPasswordMatchErrMessage{*/
+/*  border: 1px solid red ! important;*/
+/*}*/

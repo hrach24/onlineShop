@@ -15,10 +15,20 @@ import { Router } from "@angular/router";
 })
 
 export class SignUpComponent implements OnInit {
-  public eyeShow: boolean = true;
+  public confirmPasswordEyeShowHide: boolean = false;
+  public passwordEyeShowHide: boolean = false;
   public getAllUsers: IUserInterface | any;
-  public inputType: string = 'password';
+  public confirmPasswordInputType: string = 'password';
+  public passwordInputType: string = 'password';
   public emailAlreadyExist: boolean = false;
+
+  public passwordsDontMatch: boolean = false;
+  public defaultCountryCode: string;
+  public pInputMask: string;
+  public countries: any[] | undefined;
+  public selectedCountry: any;
+  public icon: string;
+  public cities: any;
   public signUpForm: FormGroup<ISignUpForm> = new FormGroup<ISignUpForm>(<ISignUpForm>{
     name: new FormControl('', Validators.required),
     surname: new FormControl('', Validators.required),
@@ -26,8 +36,8 @@ export class SignUpComponent implements OnInit {
     phoneNumber: new FormControl('', [ Validators.required, Validators.minLength(9) ]),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
-  })
-  public passwordsDontMatch: boolean = false;
+  });
+  public viewChangeProp: boolean = false;
 
   constructor(
     public ref: DynamicDialogRef,
@@ -37,16 +47,39 @@ export class SignUpComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.defaultCountryCode = '+1';
+    this.pInputMask = '(+1) 999 999-9999';
+    this.cities = [];
+    this.countries = [
+      { name: 'United States', code: '+1', img: 'assets/images/languages/en.png', mask: '999 999-9999' },
+      { name: 'Russia', code: '+7',  img: 'assets/images/languages/ru.png', mask: '999 999-99-99' },
+      { name: 'Farsi', code: '+98',  img: 'assets/images/languages/fa.png', mask: '99 9999-9999' },
+    ];
+    this.selectedCountry = this.countries[0];
 
-  public showHide(): void {
-    if (this.eyeShow) {
-      this.eyeShow = false;
-      this.inputType = 'text';
+  }
+
+  public ConfirmPasswordEyeShowHide(): void {
+    if (this.confirmPasswordEyeShowHide) {
+      this.confirmPasswordEyeShowHide = false;
+      this.confirmPasswordInputType = 'password';
 
     } else {
-      this.eyeShow = true;
-      this.inputType = 'password';
+      this.confirmPasswordEyeShowHide = true;
+      this.confirmPasswordInputType = 'text';
+
+    }
+  }
+
+  public PasswordEyeShowHide(): void {
+    if (this.passwordEyeShowHide) {
+      this.passwordEyeShowHide = false;
+      this.passwordInputType = 'password';
+
+    } else {
+      this.passwordEyeShowHide = true;
+      this.passwordInputType = 'text';
 
     }
   }
@@ -60,6 +93,10 @@ export class SignUpComponent implements OnInit {
   }
 
   public submit(): void {
+    console.log(this.signUpForm)
+
+
+
     if (this.signUpForm.invalid) {
       this.signUpForm.markAllAsTouched();
 
@@ -93,10 +130,22 @@ export class SignUpComponent implements OnInit {
 
             }
           },
-          error:(err) => {
+          error:(err): void => {
             this.router.navigate([ '/error' ]).then()
           }
       })
     }
   }
+
+  public getCountry(): void{
+    console.log('ok')
+    this.defaultCountryCode = this.selectedCountry.code;
+    this.pInputMask = `(${this.selectedCountry.code}) ` + this.selectedCountry.mask
+  }
+
+  public viewChange(): void {
+    this.viewChangeProp = !this.viewChangeProp;
+    console.log(this.viewChangeProp)
+  }
+
 }

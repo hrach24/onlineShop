@@ -41,7 +41,7 @@ import { ChipsModule } from 'primeng/chips';
 import { ProductComponent } from './product/product.component';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { OverlayPanelModule } from "primeng/overlaypanel";
-
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 @NgModule({
   declarations: [
@@ -87,7 +87,8 @@ import { OverlayPanelModule } from "primeng/overlaypanel";
     CalendarModule,
     ChipsModule,
     ConfirmPopupModule,
-    OverlayPanelModule
+    OverlayPanelModule,
+    InputSwitchModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

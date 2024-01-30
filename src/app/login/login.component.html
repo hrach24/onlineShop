@@ -3,11 +3,10 @@
     <div class="image-and-welcome-container">
       <img src="assets/images/shop-logo/shop-logo.jpg" alt="" class="shop-logo">
       <div class="welcome-txt">Welcome to YummyShop.am</div>
-<!--      <span *ngIf="userEmail"><i class="pi pi-user"></i>{{userEmail}}</span>-->
       <div *ngIf="userEmail"><i class="pi pi-user user-icon-after-continue-button"></i>{{userEmail}}</div>
     </div>
     <div class="login-form-container">
-      <form (ngSubmit)="submit()" [formGroup]="loginForm">
+      <form [formGroup]="loginForm">
         <div class="mail-and-phone-number-container">
           <span class="mail-and-phone-number-txt" *ngIf="!emailSucceed">Enter your email or phone number</span>
           <div class="for-underline-border">
@@ -24,7 +23,7 @@
                 <p-inputGroupAddon>
                   <i class="pi pi-lock"></i>
                 </p-inputGroupAddon>
-                <p-password id="toggle" [toggleMask]="true" formControlName="password"/>
+                <p-password id="toggle" [toggleMask]="true" [feedback]="false" formControlName="password"/>
               </p-inputGroup>
             </ng-template>
 
@@ -44,6 +43,12 @@
               <p-message severity="error" text="Please Fill The Password"></p-message>
             </div>
           </ng-container>
+          <ng-container *ngIf="wrongPassword">
+            <div class="error">
+              <p-message severity="error" text="Please Fill The Correct Password"></p-message>
+            </div>
+          </ng-container>
+
         </div>
 
         <div class="continue-button-and-social-medias">

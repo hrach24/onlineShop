@@ -12,7 +12,6 @@ export class AuthService {
 
   public isAuth$: Subject<boolean> = new Subject<boolean>();
   public userData$: Subject<IUserInterface> = new Subject<IUserInterface>();
-  // public userData$: Subject<any> = new Subject<any>();
 
   public settingTrueVal(isAuth: boolean, newUser: any): void {
     this.isAuth$.next(isAuth);
