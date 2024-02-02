@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
     public userService: AuthService,
     private messageService: MessageService,
     private router: Router,
-    private usersService: UserService
+    private usersService: UserService,
   ) {}
 
   ngOnInit() {
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit{
   }
 
   public logInButtonClick() :void {
-    if (this.loginForm.value.password === this.currentUser.password){
+    if (this.loginForm.value.password === this.currentUser.password) {
       this.userService.settingTrueVal(true, this.currentUser);
       this.ref.close();
 

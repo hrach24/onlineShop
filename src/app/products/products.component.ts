@@ -35,12 +35,13 @@ export class ProductsComponent implements OnInit {
   }
 
   private getProducts(): void {
-    this.productsService.getProducts(this.mainCategory)
+    this.productsService.getProducts()
       .pipe(take(1))
       .subscribe({
         next: (res: IProducts) => {
           this.isLoading = false;
           this.mainCategoryProducts = res[this.mainCategory];
+          console.log(res[this.mainCategory])
         }
       })
   }

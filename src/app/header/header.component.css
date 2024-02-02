@@ -28,7 +28,11 @@
 }
 
 .icon span {
-  font-size: 25px
+  font-size: 25px;
+}
+
+.icon img:hover {
+  cursor: pointer;
 }
 
 .user-overlayPanelDropDown {

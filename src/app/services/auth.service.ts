@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from "rxjs";
+import { ReplaySubject, Subject } from "rxjs";
 import { IUserInterface } from "../core/interfaces/user.interface";
 
 
@@ -11,7 +11,7 @@ export class AuthService {
   constructor() {}
 
   public isAuth$: Subject<boolean> = new Subject<boolean>();
-  public userData$: Subject<IUserInterface> = new Subject<IUserInterface>();
+  public userData$: ReplaySubject<IUserInterface> = new ReplaySubject<IUserInterface>(1);
 
   public settingTrueVal(isAuth: boolean, newUser: any): void {
     this.isAuth$.next(isAuth);

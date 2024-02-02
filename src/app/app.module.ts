@@ -42,6 +42,7 @@ import { ProductComponent } from './product/product.component';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     ProductsComponent,
     CartComponent,
     ProductComponent,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,

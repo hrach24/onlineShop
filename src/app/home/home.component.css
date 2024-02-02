@@ -67,7 +67,7 @@
   border-color: #f97316;
 }
 
-:host ::ng-deep .p-card-header .pi-star{
+:host ::ng-deep .p-card-header .pi-heart{
   position: absolute;
   color: yellow;
   right: 7px;
@@ -139,7 +139,8 @@ h2{
 }
 
 @media only screen and (max-width: 1260px) {
-  .product-container{
+  .product-container {
     width: 87%
   }
+
 }

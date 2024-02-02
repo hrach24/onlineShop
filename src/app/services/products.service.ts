@@ -32,7 +32,7 @@ export class getProducts {
       })
   }
 
-  public getProducts(mainCategory: any): Observable<IProducts> {
+  public getProducts():Observable<IProducts> {
     return this.http.get<IProducts>('http://localhost:3000/products')
       .pipe(
         tap((res) => {

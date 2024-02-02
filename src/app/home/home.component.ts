@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { HeaderLinksService } from "../services/header-links.service";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { IProducts } from "../core/interfaces/products-interface";
+import { IProducts, ISkeleton } from "../core/interfaces/products-interface";
 import { Router } from "@angular/router";
 import { take } from "rxjs";
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
-import { DialogService } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ProductComponent } from "../product/product.component";
-import { ISkeleton } from "../core/interfaces/products-interface";
+import { IUserInterface } from "../core/interfaces/user.interface";
+import { UserService } from "../services/user.service";
+
+
 
 @Component({
   selector: 'app-home',
@@ -24,18 +26,21 @@ export class HomeComponent implements OnInit {
   public products: { [key: string]: any } = {}
   public isLoading: boolean = true;
   public ref: DynamicDialogRef;
+  public user: IUserInterface;
+
 
   constructor(
     public headerLinks: HeaderLinksService,
     private http: HttpClient,
     private router: Router,
     public dialogService: DialogService,
-  ) {
+    public userService: UserService
+    ) {
   }
 
   ngOnInit(): void {
     this.items = this.headerLinks.getMenuItems();
-    this.getProducts()
+    this.getProducts();
   }
 
   private getProducts(): void {
@@ -73,4 +78,18 @@ export class HomeComponent implements OnInit {
       data: { productId, productCategory }
     });
   }
+
+  public addToFavorite(productId: string, productCategory: string, event: any): void {
+      event.stopPropagation();
+      this.userService.addProductToFavorites(productId, productCategory);
+
+  }
+
+
+
+
+
+
+
+
 }

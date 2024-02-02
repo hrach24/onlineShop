@@ -47,8 +47,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    this.checkUserFromLocalStorage();
     this.followAuthState();
+    this.checkUserFromLocalStorage();
     this.generateUserProfileItems();
     this.price = [
       { name: 'AMD', code: 'AMD' },
@@ -86,7 +86,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
                 this.items[0].label = `${this.userName} ${this.userSurname}`;
 
               }
-              this.isAuth = true;
+              this.authService.userData$.next(foundUser);
+              this.authService.isAuth$.next(true);
             }else {
               localStorage.clear();
 

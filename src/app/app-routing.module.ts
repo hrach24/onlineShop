@@ -9,12 +9,14 @@ import { ProductsComponent } from "./products/products.component";
 import {routerExistGuard} from "./guards/router-exist.guard";
 import {AdminComponent} from "./admin/admin.component";
 import { CartComponent } from "./cart/cart.component";
+import { FavoritesComponent } from "./favorites/favorites.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'favorites', component: FavoritesComponent },
   { path: ':id', component: ProductsComponent, canMatch: [ routerExistGuard ] },
   { path: '**', component: ErrorComponent }
 ];

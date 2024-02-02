@@ -36,6 +36,8 @@ export class SignUpComponent implements OnInit {
     phoneNumber: new FormControl('', [ Validators.required, Validators.minLength(9) ]),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
+    companyName: new FormControl('', Validators.required),
+    companyNumber: new FormControl('')
   });
   public viewChangeProp: boolean = false;
 
@@ -57,7 +59,7 @@ export class SignUpComponent implements OnInit {
       { name: 'Farsi', code: '+98',  img: 'assets/images/languages/fa.png', mask: '99 9999-9999' },
     ];
     this.selectedCountry = this.countries[0];
-
+    this.signUpForm.controls.companyName?.disable();
   }
 
   public ConfirmPasswordEyeShowHide(): void {
@@ -93,10 +95,6 @@ export class SignUpComponent implements OnInit {
   }
 
   public submit(): void {
-    console.log(this.signUpForm)
-
-
-
     if (this.signUpForm.invalid) {
       this.signUpForm.markAllAsTouched();
 
@@ -119,7 +117,8 @@ export class SignUpComponent implements OnInit {
             }else {
               let newUser: IUserInterface = {
                 ...this.signUpForm.getRawValue(),
-                role: '0'
+                role: '0',
+                favorites: [],
               };
               this.http.post('http://localhost:3000/users', newUser)
                 .subscribe(res => {
@@ -140,12 +139,20 @@ export class SignUpComponent implements OnInit {
   public getCountry(): void{
     console.log('ok')
     this.defaultCountryCode = this.selectedCountry.code;
-    this.pInputMask = `(${this.selectedCountry.code}) ` + this.selectedCountry.mask
+    this.pInputMask = `(${this.selectedCountry.code}) ` + this.selectedCountry.mask;
   }
 
   public viewChange(): void {
     this.viewChangeProp = !this.viewChangeProp;
-    console.log(this.viewChangeProp)
+    if (this.viewChangeProp) {
+      this.signUpForm.controls.companyName?.enable();
+
+    }else{
+      this.signUpForm.controls.companyName?.reset();
+      this.signUpForm.controls.companyName?.disable();
+
+
+    }
   }
 
 }

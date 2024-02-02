@@ -7,17 +7,16 @@
     <div class="col-12 category-txt">
       <h2>{{item.key}}</h2>
     </div>
-
     <div class="grid">
       <div class="mr-4 col-2 w-12rem" *ngFor="let product of item.value" >
         <p-card [style]="{ width: '196px' }" subheader="{{product.title}}" class="p-holder" title="{{product.title}}" (click)="showProduct(product.id, item.key)">
           <ng-template pTemplate="header">
-            <span class="pi pi-star"></span>
+            <span class="pi pi-heart" (click)="addToFavorite(product.id, item.key, $event)"></span>
             <img alt="Card" src="{{product.img}}"/>
 
           </ng-template>
           <span>
-            {{item.key}}
+
         </span>
 
           <ng-template pTemplate="footer">

@@ -12,7 +12,8 @@ export interface IProduct {
   "img": string,
   "ingredients": string,
   "description": string,
-  "price": string
+  "price": string,
+  favorites: any[],
 }
 
 export interface ISkeleton {

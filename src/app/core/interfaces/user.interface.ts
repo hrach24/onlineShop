@@ -6,6 +6,7 @@ export interface IUserInterface {
   phoneNumber: string,
   password: string,
   role: string,
+  favorites: [],
 }
 
 export interface IUserLoginInterFace {
