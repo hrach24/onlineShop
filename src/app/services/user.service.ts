@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable, Subject, take } from "rxjs";
+import { Subject, take } from "rxjs";
 import { IUserInterface } from "../core/interfaces/user.interface";
-
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import { IUserInterface } from "../core/interfaces/user.interface";
 export class UserService {
   public usersEmail$: Subject<any> = new Subject<any>();
   public array: any[] = [];
-  constructor(public http: HttpClient){}
+  constructor(public http: HttpClient, public authService: AuthService){}
 
 
   public getUsersEmail(){
@@ -26,7 +26,13 @@ export class UserService {
           next: (res: any) => {
               this.array = res.favorites;
               this.array.push( { productCategory, productId } );
-              this.http.patch(`http://localhost:3000/users/` + user.id, { favorites: this.array }).subscribe();
+              this.http.patch(`http://localhost:3000/users/` + user.id, { favorites: this.array }).subscribe({
+                next: (res: any) =>  {
+                      localStorage.removeItem('newUser');
+                      localStorage.setItem('newUser', JSON.stringify(res))
+                      this.authService.userData$.next(res)
+                 }
+              });
           }
         })
 

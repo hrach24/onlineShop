@@ -12,7 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ButtonModule } from "primeng/button";
 import { InputTextModule } from "primeng/inputtext";
-import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import {DialogService, DynamicDialogModule} from 'primeng/dynamicdialog';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AutoCompleteModule } from "primeng/autocomplete";
@@ -43,6 +43,7 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FavoritesComponent } from './favorites/favorites.component';
+import {productViewService} from "./services/productView.service";
 
 @NgModule({
   declarations: [
@@ -92,7 +93,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     OverlayPanelModule,
     InputSwitchModule
   ],
-  providers: [MessageService],
+  providers: [MessageService, DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

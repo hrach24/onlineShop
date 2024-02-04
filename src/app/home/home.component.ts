@@ -5,19 +5,15 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { IProducts, ISkeleton } from "../core/interfaces/products-interface";
 import { Router } from "@angular/router";
 import { take } from "rxjs";
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { ProductComponent } from "../product/product.component";
 import { IUserInterface } from "../core/interfaces/user.interface";
 import { UserService } from "../services/user.service";
-
+import { productViewService } from "../services/productView.service";
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  providers: [ DialogService ],
-
 })
 
 export class HomeComponent implements OnInit {
@@ -25,7 +21,6 @@ export class HomeComponent implements OnInit {
   public activeItem: MenuItem;
   public products: { [key: string]: any } = {}
   public isLoading: boolean = true;
-  public ref: DynamicDialogRef;
   public user: IUserInterface;
 
 
@@ -33,10 +28,9 @@ export class HomeComponent implements OnInit {
     public headerLinks: HeaderLinksService,
     private http: HttpClient,
     private router: Router,
-    public dialogService: DialogService,
-    public userService: UserService
-    ) {
-  }
+    public userService: UserService,
+    public productViewService: productViewService
+    ) {}
 
   ngOnInit(): void {
     this.items = this.headerLinks.getMenuItems();
@@ -47,7 +41,7 @@ export class HomeComponent implements OnInit {
     this.http.get<IProducts>('http://localhost:3000/products/')
       .pipe(take(1))
       .subscribe({
-        next: (res: IProducts) => {
+        next: (res: IProducts):void => {
           this.isLoading = false;
           for (let key in res) {
             if (this.products) {
@@ -65,18 +59,8 @@ export class HomeComponent implements OnInit {
     return new Array(num)
   }
 
-  public showProduct(productId: string, productCategory: string) {
-    this.ref = this.dialogService.open(ProductComponent, {
-      contentStyle: {
-        'overflow-y': 'hidden',
-      },
-      closable: true,
-      baseZIndex: 10000,
-      dismissableMask: true,
-      showHeader: true,
-      header: '',
-      data: { productId, productCategory }
-    });
+  public showProduct(productId: string, productCategory: string) :void {
+    this.productViewService.productView(productId, productCategory);
   }
 
   public addToFavorite(productId: string, productCategory: string, event: any): void {
@@ -84,12 +68,4 @@ export class HomeComponent implements OnInit {
       this.userService.addProductToFavorites(productId, productCategory);
 
   }
-
-
-
-
-
-
-
-
 }

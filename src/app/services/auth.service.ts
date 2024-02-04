@@ -11,7 +11,7 @@ export class AuthService {
   constructor() {}
 
   public isAuth$: Subject<boolean> = new Subject<boolean>();
-  public userData$: ReplaySubject<IUserInterface> = new ReplaySubject<IUserInterface>(1);
+  public userData$: ReplaySubject<IUserInterface> = new ReplaySubject<IUserInterface>(2);
 
   public settingTrueVal(isAuth: boolean, newUser: any): void {
     this.isAuth$.next(isAuth);

@@ -4,7 +4,8 @@ import { HeaderLinksService } from "../services/header-links.service";
 import { AuthService } from "../services/auth.service";
 import { getProducts } from "../services/products.service";
 import { IUserInterface } from "../core/interfaces/user.interface";
-import { IProduct, IProducts } from "../core/interfaces/products-interface";
+import { IProducts } from "../core/interfaces/products-interface";
+import { productViewService } from "../services/productView.service";
 
 
 @Component({
@@ -15,48 +16,54 @@ import { IProduct, IProducts } from "../core/interfaces/products-interface";
 export class FavoritesComponent implements OnInit{
   public items: MenuItem[] | undefined;
   public activeItem: MenuItem;
-  public productsArray: any[];
-  public favoriteProductsFromDataBase: any[] = [];
   public userFavoriteProducts: any[] = [];
   public products: { [key: string]: any } = {};
-  public newArr = [];
-  public f = []
-  public obj: { [key: string]: any[] } = {};
+  public favProdsWithMatchedCategory = []
+  public arrayOfFavProds:any[] = [];
+  public faveProductFound: boolean = true;
 
   constructor(
     public headerLinks: HeaderLinksService,
     public productService: getProducts,
     public authService: AuthService,
-) {}
+    public productViewService: productViewService,
+  ) {}
 
   ngOnInit(): void {
     this.items = this.headerLinks.getMenuItems();
-
     this.authService.userData$.subscribe({
-      next: (res) => {
-        this.userFavoriteProducts = res.favorites
-        this.productService.getProducts().subscribe({
-          next:(products) => {
-            for (let key in products) {
-              if (this.products) {
-                this.products[key] = Object.values(products[key]).flat();
-              }
+      next: (res: IUserInterface) :void => {
+        this.userFavoriteProducts = res.favorites;
+      }
+    })
+
+    if (this.userFavoriteProducts.length !== 0) {
+      this.productService.getProducts().subscribe({
+        next: (productsFromServer: IProducts) :void => {
+          for (let key in productsFromServer) {
+            if (this.products) {
+              this.products[key] = Object.values(productsFromServer[key]).flat();
             }
-            this.userFavoriteProducts.forEach((item) => {
-
-            this.f = this.products[item.productCategory]
-
-            this.f.forEach((it) => {
-              if (it['id'] === item.productId){
-                this.obj[item.productCategory] = this.obj[item.productCategory] || [];
-                this.obj[item.productCategory].push(it);
+          }
+          this.userFavoriteProducts.forEach((item) => {
+            this.favProdsWithMatchedCategory = this.products[item.productCategory];
+            this.favProdsWithMatchedCategory.forEach((favoriteItem: any) :void => {
+              if (favoriteItem['id'] === item.productId){
+                favoriteItem.favProductCategory = item.productCategory
+                this.arrayOfFavProds.push(favoriteItem)
               }
             })
           })
-            console.log(this.obj)
-          }
-        })
-      }
-    })
+        }
+      })
+    }else {
+      this.faveProductFound = false;
+    }
   }
+  public productShow(productId: string, productCategory :string){
+    this.productViewService.productView(productId, productCategory)
+  }
+
+
+
 }

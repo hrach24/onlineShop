@@ -67,14 +67,14 @@
   border-color: #f97316;
 }
 
-:host ::ng-deep .p-card-header .pi-star{
+:host ::ng-deep .p-card-header .pi-heart{
   position: absolute;
   color: yellow;
   right: 7px;
   top: 3px;
 }
 
-:host ::ng-deep .pi-star:hover{
+:host ::ng-deep .pi-heart:hover{
   font-size: 18px;
   cursor: pointer;
 }
