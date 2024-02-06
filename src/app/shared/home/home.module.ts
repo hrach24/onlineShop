@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { HomeComponent } from "../../home/home.component";
 import { TabMenuModule } from "primeng/tabmenu";
 import { ButtonModule } from "primeng/button";
@@ -15,7 +15,8 @@ import { DialogModule } from "primeng/dialog";
         CardModule,
         CommonModule,
         NgxSkeletonLoaderModule,
-        DialogModule
+        DialogModule,
+        NgOptimizedImage
     ],
   exports: [
     HomeComponent,

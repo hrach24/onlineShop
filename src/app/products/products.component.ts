@@ -31,14 +31,14 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.pageRoute = this.router.url;
     this.mainCategory = this.router.url.slice(1);
-    this.getProducts()
+    this.getProducts();
   }
 
   private getProducts(): void {
     this.productsService.getProducts()
       .pipe(take(1))
       .subscribe({
-        next: (res: IProducts) => {
+        next: (res: IProducts) :void => {
           this.isLoading = false;
           this.mainCategoryProducts = res[this.mainCategory];
           console.log(res[this.mainCategory])
@@ -46,7 +46,7 @@ export class ProductsComponent implements OnInit {
       })
   }
 
-  public showProduct(productId: string) {
+  public showProduct(productId: string) :void {
     this.ref = this.dialogService.open(ProductComponent, {
       contentStyle: {
         'overflow-y': 'hidden',
@@ -62,6 +62,6 @@ export class ProductsComponent implements OnInit {
   }
 
   public skeletonView(num: number): ISkeleton[] {
-    return new Array(num)
+    return new Array(num);
   }
 }

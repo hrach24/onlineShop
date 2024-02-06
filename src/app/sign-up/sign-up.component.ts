@@ -37,7 +37,7 @@ export class SignUpComponent implements OnInit {
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
     companyName: new FormControl('', Validators.required),
-    companyNumber: new FormControl('')
+    companyNumber: new FormControl(''),
   });
   public viewChangeProp: boolean = false;
 
@@ -85,14 +85,14 @@ export class SignUpComponent implements OnInit {
 
     }
   }
-
-  public onClose(): void {
-    this.ref.close();
-  }
-
-  public showLoginModal(): void {
-    this.ref.close(true);
-  }
+  //
+  // public onClose(): void {
+  //   this.ref.close();
+  // }
+  //
+  // public showLoginModal(): void {
+  //   this.ref.close(true);
+  // }
 
   public submit(): void {
     if (this.signUpForm.invalid) {
@@ -107,7 +107,7 @@ export class SignUpComponent implements OnInit {
       this.passwordsDontMatch = false;
       this.http.get('http://localhost:3000/users')
         .subscribe({
-          next:(res) => {
+          next:(res) :void => {
             this.getAllUsers = res;
             let userAlreadyExist =  this.getAllUsers.find((user:IUserInterface) => user.email === this.signUpForm.value.email);
             if (userAlreadyExist) {
@@ -120,6 +120,7 @@ export class SignUpComponent implements OnInit {
                 role: '0',
                 favorites: [],
               };
+              console.log(newUser)
               this.http.post('http://localhost:3000/users', newUser)
                 .subscribe(res => {
                   this.signUpUserService.settingTrueVal(true, newUser);
@@ -137,7 +138,6 @@ export class SignUpComponent implements OnInit {
   }
 
   public getCountry(): void{
-    console.log('ok')
     this.defaultCountryCode = this.selectedCountry.code;
     this.pInputMask = `(${this.selectedCountry.code}) ` + this.selectedCountry.mask;
   }
@@ -151,8 +151,6 @@ export class SignUpComponent implements OnInit {
       this.signUpForm.controls.companyName?.reset();
       this.signUpForm.controls.companyName?.disable();
 
-
     }
   }
-
 }

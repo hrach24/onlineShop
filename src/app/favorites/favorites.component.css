@@ -9,6 +9,7 @@
   box-shadow: 0 6px 20px rgba(68,71,91,.12);
   border-radius: 16px;
   padding: 12px;
+  cursor: pointer;
 }
 
 .product-price-img-and-price {

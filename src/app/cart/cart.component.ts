@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class CartComponent implements OnInit{
-  public countries: any[] | undefined;
+  public countries: any[];
   public defaultCountryCode: string;
   public pInputMask: string;
   public selectedCountry: any
   public date: Date;
-  public cities: any;
+  public cities: any = [];
   public icon: string;
-  public foundMinute: number | undefined;
+  public foundMinute: number;
   public currentTime: string;
   public loopCount: number;
   public array: any[];
@@ -26,6 +26,7 @@ export class CartComponent implements OnInit{
   constructor() {}
 
   ngOnInit(): void {
+    this.setTheDate()
     this.defaultCountryCode = '+1';
     this.pInputMask = '(+1) 999 999-9999';
     this.countries = [
@@ -34,7 +35,11 @@ export class CartComponent implements OnInit{
       { name: 'Farsi', code: '+98',  img: 'assets/images/languages/fa.png', mask: '99 9999-9999' },
     ];
     this.selectedCountry = this.countries[0];
-    this.cities = [];
+
+  }
+
+
+  public setTheDate(): void {
     this.date = new Date();
     this.loopCount = 0;
     this.array = [0,15,30,45];
@@ -98,7 +103,7 @@ export class CartComponent implements OnInit{
     }
   }
 
-  getCountry(): void{
+  public getCountry(): void{
     this.defaultCountryCode = this.selectedCountry.code;
     this.pInputMask = `(${this.selectedCountry.code}) ` + this.selectedCountry.mask
   }

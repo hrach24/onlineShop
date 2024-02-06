@@ -74,6 +74,13 @@
   top: 3px;
 }
 
+:host ::ng-deep .p-card-header .pi-heart-fill{
+  position: absolute;
+  color: yellow;
+  right: 7px;
+  top: 3px;
+}
+
 :host ::ng-deep .pi-star:hover{
   font-size: 18px;
   cursor: pointer;

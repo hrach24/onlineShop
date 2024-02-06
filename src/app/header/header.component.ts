@@ -70,7 +70,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         .subscribe({
           next:(usersFromServer) => {
             this.users = usersFromServer;
-            let foundUser = this.users.find((user: any) => {
+            let foundUser = this.users.find((user: IUserInterface) => {
               if (
                 user.name === userFromLocalStorage.name &&
                 user.surname === userFromLocalStorage.surname &&
@@ -93,14 +93,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
             }
           },
-          error: (err) => {
+          error: (err) :void => {
             this.router.navigate([ '/error' ]).then()
           }
         })
 
     }else {
       localStorage.clear();
-
     }
   }
 
@@ -108,11 +107,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authService.isAuth$
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe( {
-        next:(data) => {
+        next:(data: boolean) :void => {
           this.isAuth = data;
           },
-        error: (err) => {
-          this.router.navigate([ '/error' ]).then()
+        error: (err) :void => {
+          this.router.navigate([ '/error' ]).then();
         }
       })
   }
@@ -124,32 +123,32 @@ export class HeaderComponent implements OnInit, OnDestroy {
           {
             label: 'Yummy Shop.am Wallet',
             icon: 'assets/images/shop-logo/shop-logo.jpg',
-            command: () => {
+            command: (): void => {
             },
             routerLink: 'hey'
           },
           {
             label: 'Gift Cards',
             icon: 'assets/images/header/gift-card.png',
-            clickEvent: () => {
+            clickEvent: (): void => {
             }
           },
           {
             label: 'My Addresses',
             icon: 'assets/images/header/location.png',
-            clickEvent: () => {
+            clickEvent: (): void => {
             }
           },
           {
             label: 'Personal Information',
             icon: 'assets/images/header/grey-user.png',
-            clickEvent: () => {
+            clickEvent: (): void => {
             }
           },
           {
             label: 'Orders History',
             icon: 'assets/images/header/history.png',
-            clickEvent: () => {
+            clickEvent: (): void => {
             }
           },
           {
@@ -206,7 +205,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public logInPopUpShowAndButtonClick(event: any, element: any): void {
-    this.popUpLoginButtonClick();
     element.hide(event);
     this.loginShow();
   }
@@ -214,9 +212,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public registerPopUpShowAndButtonClick(event: any, element: any): void {
     element.hide(event);
     this.signUpShow();
-  }
-
-  public popUpLoginButtonClick() :void{
-
   }
 }

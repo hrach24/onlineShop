@@ -15,3 +15,16 @@ export interface IUserLoginInterFace {
   email: string | undefined,
   password: string | undefined,
 }
+
+export interface IUserFromServer {
+  id?: string
+  name: string,
+  surname: string,
+  email: string,
+  phoneNumber: string,
+  password: string,
+  role: string,
+  favorites: [],
+  companyName: string,
+  companyNumber: string,
+}

@@ -7,7 +7,7 @@ import { MenuItem } from "primeng/api";
   styleUrl: './footer.component.css'
 })
 export class FooterComponent implements OnInit{
-  public items: MenuItem[] | undefined;
+  public items: MenuItem[];
 
   ngOnInit(): void {
     this.items = [

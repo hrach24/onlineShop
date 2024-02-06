@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit{
   public makeInputBorderNotVisiable:boolean =  false;
   public users: any[];
   public emailSucceed: boolean = false;
-  public userEmail: string | undefined
-  public currentUser: IUserLoginInterFace
+  public userEmail: string | undefined;
+  public currentUser: IUserLoginInterFace;
 
   constructor(
     private ref: DynamicDialogRef,
@@ -35,14 +35,13 @@ export class LoginComponent implements OnInit{
     private usersService: UserService,
   ) {}
 
-  ngOnInit() {
+  ngOnInit() :void {
     this.usersService.getUsersEmail().subscribe({
       next: (res: any) => {
-        console.log(res)
-        this.users = res
+        this.users = res;
       },
       error:(err) => {
-        this.router.navigate([ '/error' ]).then()
+        this.router.navigate([ '/error' ]).then();
       }
     })
   }
@@ -69,8 +68,8 @@ export class LoginComponent implements OnInit{
       this.ref.close();
 
       if (this.currentUser.name && this.currentUser.surname){
-        let firstLetterUpperCaseUserName: string = this.currentUser.name[0]!.toUpperCase() + this.currentUser.name.slice(1)
-        let firstLetterUpperCaseUserSurname: string = this.currentUser.surname[0].toUpperCase() + this.currentUser.surname.slice(1)
+        let firstLetterUpperCaseUserName: string = this.currentUser.name[0]!.toUpperCase() + this.currentUser.name.slice(1);
+        let firstLetterUpperCaseUserSurname: string = this.currentUser.surname[0].toUpperCase() + this.currentUser.surname.slice(1);
         this.messageService.add({ severity: 'success', summary: 'Welcome Back !', detail:  firstLetterUpperCaseUserName +  " " + firstLetterUpperCaseUserSurname });
 
       }

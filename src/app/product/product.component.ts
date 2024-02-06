@@ -19,7 +19,8 @@ export class ProductComponent implements OnInit{
   public productPrice: number;
   public originalProductPrice: number;
   public urlToCopy: string;
-  public makeBorderColorToGreen: boolean
+  public makeBorderColorToGreen: boolean;
+
     constructor(
       public config: DynamicDialogConfig,
       public getProductsService: getProducts,
@@ -29,11 +30,11 @@ export class ProductComponent implements OnInit{
       this.productCategory = config.data.productCategory;
     }
 
-    ngOnInit(){
+    ngOnInit() :void {
       this.getProducts(this.productId, this.productCategory);
       this.getProductsService.foundProduct$
         .pipe(take(1))
-        .subscribe((res) => {
+        .subscribe((res) :void => {
         this.productPrice = Number(res.price.slice(0,-1))
         this.originalProductPrice = Number(res.price.slice(0,-1))
       })
@@ -42,7 +43,7 @@ export class ProductComponent implements OnInit{
     }
 
     public getProducts(productId: any, productCategory: any): void{
-        this.getProductsService.getProductsByID(productId, productCategory)
+        this.getProductsService.getProductsByID(productId, productCategory);
     }
 
     public productMinus() :void{
@@ -61,7 +62,7 @@ export class ProductComponent implements OnInit{
       this.clipBoardService.copyFromContent(this.urlToCopy);
       this.makeBorderColorToGreen = true;
       setTimeout(():void => {
-        this.makeBorderColorToGreen = false
+        this.makeBorderColorToGreen = false;
       },4000)
   }
 }
