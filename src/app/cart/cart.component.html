@@ -1,99 +1,213 @@
-<div class="container grid">
-  <div class="col-12 make-order-txt">
-    <h2>Make an Order</h2>
-  </div>
-  <div class="col-10">
-    <div class="order-information col-10">
-      <h3>Order</h3>
-      <div class="user-info col-10">
-        <div class="cart col-9">
-          <div class="card flex">
-            <div class="line">
-              <div>
-                <label class="order-txt phone-number-txt">Phone Number</label>
+<!--<div class="container grid">-->
+<!--  <div class="col-12 make-order-txt">-->
+<!--    <h2>Make an Order</h2>-->
+<!--  </div>-->
+<!--  <div class="col-10">-->
+<!--    <div class="order-information col-10">-->
+<!--      <h3>Order</h3>-->
+<!--      <div class="user-info col-10">-->
+<!--        <div class="cart col-9">-->
+<!--          <div class="card flex">-->
+<!--            <div class="line">-->
+<!--              <div>-->
+<!--                <label class="order-txt phone-number-txt">Phone Number</label>-->
+<!--              </div>-->
+
+<!--                <p-dropdown [options]="countries" [dropdownIcon]="icon"  [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="false" (onChange)="getCountry()" class="country-dropdown">-->
+<!--                  <ng-template pTemplate="selectedItem">-->
+<!--                    <div class="flex align-items-center gap-2 country-dropdown" *ngIf="selectedCountry">-->
+<!--                      <img src="{{selectedCountry.img}}" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" style="width: 18px"/>-->
+<!--                      <div>{{ selectedCountry.name }}</div>-->
+<!--                    </div>-->
+<!--                  </ng-template>-->
+<!--                  <ng-template let-country pTemplate="item">-->
+<!--                    <div class="flex align-items-center gap-2">-->
+<!--                      <img src="{{country.img}}" [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px"/>-->
+<!--                      <div>{{country.name}}</div>-->
+<!--                    </div>-->
+<!--                  </ng-template>-->
+<!--                </p-dropdown>-->
+
+<!--              <p-inputMask [mask]="pInputMask" [placeholder]="selectedCountry.code" (onFocus)="false"></p-inputMask>-->
+<!--            </div>-->
+<!--            <div class="date-container">-->
+<!--              <div class="order-txt">Date</div>-->
+<!--              <div class="date">-->
+<!--                <p-calendar [(ngModel)]="date" [iconDisplay]="'input'" [showIcon]="true" [showButtonBar]="true">-->
+<!--                  <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">-->
+<!--                    <i class="pi pi-calendar-minus" (click)="clickCallBack($event)"></i>-->
+<!--                  </ng-template>-->
+<!--                </p-calendar>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="hour-container">-->
+<!--              <div class="order-txt ">Date Hour</div>-->
+<!--              <p-dropdown [options]="cities" optionLabel="name" [placeholder]="currentTime" [(ngModel)]="currentTime" class="date-hour"></p-dropdown>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="cart col-3">-->
+<!--          <div class="first flex">-->
+<!--            <div class="user-info-container enter">-->
+<!--              <label class="order-txt">Enter</label>-->
+<!--              <input type="text" name="" class="user-info-inp">-->
+<!--            </div>-->
+<!--            <div class="user-info-container floor">-->
+<!--              <label class="order-txt">Floor</label>-->
+<!--              <input type="text" name="" class="user-info-inp">-->
+<!--            </div>-->
+<!--          </div>-->
+
+
+
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-8 comment">-->
+<!--        <div class="card p-fluid">-->
+<!--          <div><label class="order-txt">Description</label></div>-->
+<!--          <div class="comment-input">-->
+<!--            <p-chips></p-chips>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="gift-card col-10">-->
+<!--      <h2>Gift Card And Promo Code</h2>-->
+<!--      <div class="code-container">-->
+<!--        <div>-->
+<!--          <label class="order-txt">Ente the code</label>-->
+<!--        </div>-->
+<!--        <p-autoComplete class="enter-the-code-inp"></p-autoComplete>-->
+<!--        <p-button label="Submit"></p-button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--  <div class="col-2 cart-container">-->
+<!--    <div class="cart-content">-->
+<!--      <div class="content">-->
+<!--        <p class="pi pi-shopping-cart shopping-cart"></p>-->
+<!--        <p class="cart-txt">Your Cart Is Empty.</p>-->
+<!--        <p class="product-adding-txt">For adding a product please press &lt;&lt;Add&gt;&gt; Button</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="cart-content">-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->
+
+
+  <div class="container">
+    <div class="make-order-container">
+        <h1>Checkout</h1>
+
+      <div class="user-info-fill">
+        <div class="order"><h2>Order</h2></div>
+      <div class="user-info-fill-first-row">
+        <div class="address">
+          <label class="order-labels add-location-city-label">Address, location, city.</label>
+          <span class="p-input-icon-right">
+            <i class="pi pi-angle-down"></i>
+          <p-chips class="ad-loc-city" placeholder="Address, location, city."></p-chips>
+          </span>
+
+        </div>
+        <div class="house-info-need-to-fill">
+          <div class="house-info enter-number">
+            <label class="order-labels">Enter</label>
+          </div>
+          <div class="house-info floor">
+            <label class="order-labels">Floor</label>
+          </div>
+          <div class="house-info house-number">
+            <label class="order-labels">Flat</label>
+          </div>
+          <div class="house-info porch-number">
+            <label class="order-labels">Enter code</label>
+          </div>
+        </div>
+      </div>
+      <div class="phone-number-comment-container">
+        <div class="phone-number">
+          <label class="order-labels">Phone number</label>
+          <div class="phone-number-and-img">
+              <div class="flag">
+                <img src="assets/images/languages/en.png" alt="">
+                <i class="pi pi-angle-down"></i>
               </div>
-
-                <p-dropdown [options]="countries" [dropdownIcon]="icon"  [(ngModel)]="selectedCountry" optionLabel="name" [showClear]="false" (onChange)="getCountry()" class="country-dropdown">
-                  <ng-template pTemplate="selectedItem">
-                    <div class="flex align-items-center gap-2 country-dropdown" *ngIf="selectedCountry">
-                      <img src="{{selectedCountry.img}}" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" style="width: 18px"/>
-                      <div>{{ selectedCountry.name }}</div>
-                    </div>
-                  </ng-template>
-                  <ng-template let-country pTemplate="item">
-                    <div class="flex align-items-center gap-2">
-                      <img src="{{country.img}}" [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px"/>
-                      <div>{{country.name}}</div>
-                    </div>
-                  </ng-template>
-                </p-dropdown>
-
-              <p-inputMask [mask]="pInputMask" [placeholder]="selectedCountry.code" (onFocus)="false"></p-inputMask>
-            </div>
-            <div class="date-container">
-              <div class="order-txt">Date</div>
-              <div class="date">
-                <p-calendar [(ngModel)]="date" [iconDisplay]="'input'" [showIcon]="true" [showButtonBar]="true">
-                  <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
-                    <i class="pi pi-calendar-minus" (click)="clickCallBack($event)"></i>
-                  </ng-template>
-                </p-calendar>
-              </div>
-            </div>
-            <div class="hour-container">
-              <div class="order-txt ">Date Hour</div>
-              <p-dropdown [options]="cities" optionLabel="name" [placeholder]="currentTime" [(ngModel)]="currentTime" class="date-hour"></p-dropdown>
+            <div class="user-phone-number">
+              <p-chips class="phone-number-value" [placeholder]="phoneNum"></p-chips>
             </div>
           </div>
         </div>
-        <div class="cart col-3">
-          <div class="first flex">
-            <div class="user-info-container enter">
-              <label class="order-txt">Enter</label>
-              <input type="text" name="" class="user-info-inp">
-            </div>
-            <div class="user-info-container floor">
-              <label class="order-txt">Floor</label>
-              <input type="text" name="" class="user-info-inp">
+        <div class="house-info comment">
+          <label class="order-labels">Comment</label>
+          <p-chips></p-chips>
+
+        </div>
+      </div>
+
+      <div class="order-date-txt">
+        <div>Order date and hour</div>
+      </div>
+
+
+
+
+
+
+
+      <div class="order-date-choose">
+        <div class="date-time as-soon-as-possible">
+          <div class="as-soon-as-possible-container">
+            <div class="checkbox-and-text">
+              <input type="radio" id="radio" class="radio-button" checked />
+              <p class="asap-text">
+                <span class="asap-span">As soon as possible</span>
+                <span class="order-time">Order ~ 45 min.</span>
+              </p>
             </div>
           </div>
-
-
-
         </div>
-      </div>
-      <div class="col-8 comment">
-        <div class="card p-fluid">
-          <div><label class="order-txt">Description</label></div>
-          <div class="comment-input">
-            <p-chips></p-chips>
+
+        <div class="date-time schedule-the-delivery-date">
+          <div class="checkbox-and-text">
+            <input type="radio" id="schedule" class="radio-button"/>
+            <p class="schedule-txt">
+              <span class="schedule-span">Schedule</span>
+              <span class="schedule-time">Choose the time <i class="pi pi-clock timer-icon"></i></span>
+            </p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="gift-card col-10">
-      <h2>Gift Card And Promo Code</h2>
-      <div class="code-container">
-        <div>
-          <label class="order-txt">Ente the code</label>
+      </div>
+
+      <div class="gift-card-promo-code">
+        <h2>Gift Card and Promo Code</h2>
+        <div class="enter-promo-code-container">
+          <div class="code-container">
+            <label class="order-labels">Enter the code</label>
+            <p-chips class="enter-the-code-inp"></p-chips>
+          </div>
+          <div class="promo-code-button">
+            <button class="submit-btn">APPLY</button>
+          </div>
         </div>
-        <p-autoComplete class="enter-the-code-inp"></p-autoComplete>
-        <p-button label="Submit"></p-button>
+      </div>
+
+
+    </div>
+
+
+    <div class="saved-products-in-cart">
+      <div class="cart-container">
+        <div class="for-cart-icon">
+          <img src="assets/images/shopping-cart.png" alt="">
+        </div>
+        <span class="cart-empty-txt">Your cart is empty.</span>
+        <p class="add-product-txt">To add product, click 'Add to Cart' button.</p>
       </div>
     </div>
-  </div>
-
-
-  <div class="col-2 cart-container">
-    <div class="cart-content">
-      <div class="content">
-        <p class="pi pi-shopping-cart shopping-cart"></p>
-        <p class="cart-txt">Your Cart Is Empty.</p>
-        <p class="product-adding-txt">For adding a product please press &lt;&lt;Add&gt;&gt; Button</p>
-      </div>
-    </div>
-    <div class="cart-content">
-    </div>
-  </div>
-
 </div>

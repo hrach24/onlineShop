@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IUserInterface } from "../core/interfaces/user.interface";
 
 @Component({
   selector: 'app-cart',
@@ -23,6 +24,8 @@ export class CartComponent implements OnInit{
   public amOrPm: string;
   public adjustedHours: number;
   public minutesCountInSingleHourNumber: number;
+  public phoneNum: string;
+  public loggedInUser: IUserInterface;
   constructor() {}
 
   ngOnInit(): void {
@@ -35,7 +38,9 @@ export class CartComponent implements OnInit{
       { name: 'Farsi', code: '+98',  img: 'assets/images/languages/fa.png', mask: '99 9999-9999' },
     ];
     this.selectedCountry = this.countries[0];
-
+    let user:any = localStorage.getItem('newUser');
+    this.loggedInUser = JSON.parse(user);
+    this.phoneNum = this.loggedInUser.phoneNumber
   }
 
 
