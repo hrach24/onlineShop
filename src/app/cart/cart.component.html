@@ -160,10 +160,10 @@
 
 
       <div class="order-date-choose">
-        <div class="date-time as-soon-as-possible">
+        <div [ngClass]="{'date-time': checked, 'as-soon-as-possible': !checked}">
           <div class="as-soon-as-possible-container">
             <div class="checkbox-and-text">
-              <input type="radio" id="radio" class="radio-button" checked />
+              <input type="radio" id="radio" class="radio-button" [checked]="checked" />
               <p class="asap-text">
                 <span class="asap-span">As soon as possible</span>
                 <span class="order-time">Order ~ 45 min.</span>
@@ -172,14 +172,28 @@
           </div>
         </div>
 
-        <div class="date-time schedule-the-delivery-date">
-          <div class="checkbox-and-text">
-            <input type="radio" id="schedule" class="radio-button"/>
+        <div [ngClass]="{'schedule-the-delivery-date': checked, 'date-time': !checked}">
+          <label class="checkbox-and-text" for="schedule" (click)="disableChecked()">
+               <input type="radio" id="schedule" class="radio-button"/>
             <p class="schedule-txt">
-              <span class="schedule-span">Schedule</span>
-              <span class="schedule-time">Choose the time <i class="pi pi-clock timer-icon"></i></span>
+              <span [ngClass]="{'schedule-span': checked, 'schedule-txt-color-change': !checked}">Schedule</span>
+              <span [ngClass]="{'schedule-time': checked, 'schedule-time-color-change': !checked}">Choose the time <i class="pi pi-clock timer-icon"></i></span>
             </p>
-          </div>
+          </label>
+
+
+<!--          schedule-time-color-change-->
+<!--          schedule-time-->
+
+
+<!--          <div class="checkbox-and-text">-->
+<!--            <label for="schedule"></label>-->
+<!--            <input type="radio" id="schedule" class="radio-button"/>-->
+<!--            <p class="schedule-txt">-->
+<!--              <span class="schedule-span">Schedule</span>-->
+<!--              <span class="schedule-time">Choose the time <i class="pi pi-clock timer-icon"></i></span>-->
+<!--            </p>-->
+<!--          </div>-->
         </div>
       </div>
       </div>

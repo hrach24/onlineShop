@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserInterface } from "../core/interfaces/user.interface";
 
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -26,6 +27,7 @@ export class CartComponent implements OnInit{
   public minutesCountInSingleHourNumber: number;
   public phoneNum: string;
   public loggedInUser: IUserInterface;
+  public checked: boolean;
   constructor() {}
 
   ngOnInit(): void {
@@ -40,7 +42,8 @@ export class CartComponent implements OnInit{
     this.selectedCountry = this.countries[0];
     let user:any = localStorage.getItem('newUser');
     this.loggedInUser = JSON.parse(user);
-    this.phoneNum = this.loggedInUser.phoneNumber
+    this.phoneNum = this.loggedInUser.phoneNumber;
+    this.checked = true;
   }
 
 
@@ -111,6 +114,11 @@ export class CartComponent implements OnInit{
   public getCountry(): void{
     this.defaultCountryCode = this.selectedCountry.code;
     this.pInputMask = `(${this.selectedCountry.code}) ` + this.selectedCountry.mask
+  }
+
+
+  public disableChecked(): void{
+    this.checked = false
   }
 
 }

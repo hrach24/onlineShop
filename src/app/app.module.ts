@@ -44,6 +44,7 @@ import { OverlayPanelModule } from "primeng/overlaypanel";
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FavoritesComponent } from './favorites/favorites.component';
 import {productViewService} from "./services/productView.service";
+import { TimerShowDirective } from './directive/timer-show.directive';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import {productViewService} from "./services/productView.service";
     CartComponent,
     ProductComponent,
     FavoritesComponent,
+    TimerShowDirective,
   ],
   imports: [
     BrowserModule,

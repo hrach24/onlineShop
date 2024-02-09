@@ -11,7 +11,16 @@
       "companyName": "",
       "companyNumber": "",
       "role": "1",
-      "favorites": []
+      "favorites": [
+        {
+          "productCategory": "cakes",
+          "productId": "32"
+        },
+        {
+          "productCategory": "cakes",
+          "productId": "33"
+        }
+      ]
     }
   ],
   "products": {

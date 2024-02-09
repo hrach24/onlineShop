@@ -53,12 +53,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.price = [
       { name: 'AMD', code: 'AMD' },
     ];
-
   }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+
   }
 
   public checkUserFromLocalStorage(): void {

@@ -225,6 +225,7 @@
   gap: 16px;
   align-items: center;
   padding: 0 12px;
+  height: 100%;
 }
 
 .asap-text {
@@ -275,6 +276,19 @@ input[type=radio]#schedule {
   color: #cac5c2;
 }
 
+.schedule-txt-color-change {
+  color: black;
+  font-size: 14px;
+}
+
+.schedule-time-color-change{
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
 .timer-icon {
   margin-left: 8px;
   font-size: 18px;
@@ -284,6 +298,9 @@ input[type=radio]#schedule {
 
 .schedule-the-delivery-date {
   border: 1px solid #d7d6d5;
+  width: 548px;
+  height: 52px;
+  border-radius: 8px;
 }
 
 .schedule-time {
@@ -361,19 +378,12 @@ input[type=radio]#schedule {
   margin-top: 16px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.as-soon-as-possible-container {
+  width: 548px;
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid #d7d6d5;
+}
 
 
 @media only screen and (max-width: 1257px) {
